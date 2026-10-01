@@ -141,6 +141,18 @@ button{cursor:pointer}
 .calc .unit{font-weight:600;color:var(--muted)}
 .calc select{width:100%;padding:10px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:15px;margin-bottom:10px;font-family:inherit;color:var(--ink)}
 .calc .out{margin-top:12px;font-size:22px;font-weight:700;color:var(--navy);min-height:33px}
+.pc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;align-items:end}
+.pc-grid .full{grid-column:1/-1}
+.calc .pc-grid select{margin-bottom:0}
+.pc-res{margin-top:12px;background:#17324F;color:#fff;border-radius:14px;padding:14px 16px}
+.pc-big{font-size:30px;font-weight:700;line-height:1.1}
+.pc-big small{font-size:16px;margin-left:3px}
+.pc-lbl{font-size:13.5px;opacity:.85;margin-top:2px}
+.pc-res ul{list-style:none;margin:10px 0 0;padding:0}
+.pc-res li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px solid rgba(255,255,255,.2);font-size:14.5px}
+.pc-res li span:last-child{font-weight:600;text-align:right}
+.pc-res .pc-warn{margin-top:8px;font-size:13.5px;color:#FFE2DA}
+.pc-res .pc-chk{display:block;margin-top:8px;font-size:12.5px;opacity:.8}
 .calc .out small{display:block;font-size:13px;font-weight:400;color:var(--muted)}
 
 .ask{position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--surface);border-top:1px solid var(--line);
@@ -190,13 +202,76 @@ button{cursor:pointer}
 /* bottom nav */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);
   padding-bottom:env(safe-area-inset-bottom,0px)}
-.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
 .nav button{border:0;background:transparent;padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;font-weight:500;color:var(--muted)}
+.nav button .ic{display:grid;place-items:center;width:58px;height:32px;border-radius:999px;transition:background-color .2s ease}
 .nav button svg{width:24px;height:24px}
-.nav a.nav-link{padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;font-weight:500;color:var(--muted);text-decoration:none}
-.nav a.nav-link svg{width:24px;height:24px}
+.nav button[aria-current="page"] .ic{background:var(--sky-soft)}
+.nav button[aria-current="page"] span:last-child{font-weight:600}
 .nav button[aria-current="page"]{color:var(--navy)}
 .nav button[aria-current="page"] svg{color:var(--sky)}
+/* dose calculator */
+#tab-dose .dz-card{margin:0 18px 12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.dz-h{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:600;margin:0 0 12px;color:var(--navy)}
+.dz-n{width:26px;height:26px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center;font-size:14px;flex:none}
+.dz-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.dz-full{grid-column:1/-1}
+#tab-dose label{display:block;font-size:14px;font-weight:500;margin-bottom:4px}
+#tab-dose input:not([type="checkbox"]),#tab-dose select{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:17px;font-family:inherit;color:var(--ink);min-height:48px}
+#tab-dose input:focus,#tab-dose select:focus{border-color:var(--sky);outline:none}
+.dz-hint{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+.dz-seg{display:flex;gap:8px}
+.dz-seg button{flex:1;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 6px;font-size:14px;font-weight:500;min-height:44px}
+.dz-seg button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--bg)}
+.dz-prods{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dz-prod{text-align:left;background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;min-height:62px}
+.dz-prod b{display:block;font-size:15px;font-weight:600;color:var(--navy)}
+.dz-prod span{display:block;font-size:12.5px;color:var(--muted);line-height:1.3;margin-top:2px}
+.dz-prod[aria-pressed="true"]{border-color:var(--sky);background:var(--sky-soft);box-shadow:inset 0 0 0 1px var(--sky)}
+.dz-info{margin-top:12px;font-size:14px;color:var(--muted)}
+.dz-info b{color:var(--ink);font-weight:600}
+.dz-pnote{margin-top:8px;padding:8px 12px;background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:8px;color:var(--ink);font-size:14px;font-weight:500}
+.dz-link{display:block;background:none;border:0;padding:0;margin-top:6px;font-size:14px;font-weight:600;color:var(--sky);text-decoration:underline}
+.dz-check{display:flex!important;align-items:center;gap:10px;margin-top:10px;font-weight:400!important;font-size:15px!important}
+.dz-check input{width:22px;height:22px;accent-color:#17324F}
+.dz-result{margin:0 18px 12px;background:#17324F;color:#fff;border-radius:18px;padding:18px 20px;border-bottom:4px solid var(--gold)}
+:root[data-theme="dark"] .dz-result{background:#1E3A57}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dz-result{background:#1E3A57}}
+.dz-empty{margin:0;font-size:16px;opacity:.9}
+.dz-can{display:grid;grid-template-columns:90px 1fr;gap:16px;align-items:center}
+.dz-can svg{width:90px;height:auto;display:block}
+.dz-big{font-size:42px;font-weight:700;line-height:1;letter-spacing:-.02em}
+.dz-big small{font-size:19px;margin-left:4px}
+.dz-canlbl{font-size:14.5px;margin-top:6px;opacity:.85}
+.dz-rows{list-style:none;margin:16px 0 0;padding:0;border-top:1px solid rgba(255,255,255,.35)}
+.dz-rows li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:15px}
+.dz-rows li span:last-child{font-weight:600;text-align:right}
+.dz-warn{margin-top:12px;background:rgba(231,124,99,.22);color:#FFE2DA;padding:10px 12px;border-radius:10px;font-size:14px;font-weight:500}
+.dz-share{display:flex;justify-content:center;margin-top:16px;padding:13px;border-radius:12px;background:#1FA855;color:#fff;font-weight:600;text-decoration:none}
+@media (max-width:380px){.dz-grid,.dz-prods{grid-template-columns:1fr}.dz-big{font-size:36px}}
+@media (prefers-reduced-motion:no-preference){#dzFill{transition:height .35s ease,y .35s ease}}
+/* farm performance */
+#tab-perf .dz-card{margin:0 18px 12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+#tab-perf label{display:block;font-size:14px;font-weight:500;margin-bottom:4px}
+#tab-perf input,#tab-perf select{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:17px;font-family:inherit;color:var(--ink);min-height:48px}
+#tab-perf input:focus,#tab-perf select:focus{border-color:var(--sky);outline:none}
+#tab-perf .dz-grid{align-items:end}
+.pf-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pf-kpi{background:rgba(255,255,255,.08);border-radius:12px;padding:12px}
+.pf-k{font-size:13px;opacity:.8;font-weight:500}
+.pf-v{font-size:30px;font-weight:700;line-height:1.15;margin-top:2px}
+.pf-s{font-size:12.5px;opacity:.85;margin-top:2px}
+.pf-table{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;column-gap:6px;gap:0;font-size:14px}
+.pf-table>div{padding:9px 4px;border-bottom:1px solid var(--line);display:flex;align-items:center}
+.pf-table .th{font-size:12.5px;color:var(--muted);font-weight:500}
+.pf-table .num{justify-content:flex-end;font-weight:600;white-space:nowrap}
+.pf-table .std{color:var(--muted);font-weight:500}
+.pf-chip{display:inline-block;font-size:12px;font-weight:600;padding:3px 8px;border-radius:999px;white-space:nowrap;margin-left:6px}
+.pf-good{background:#DDF3E5;color:#17663A}
+.pf-close{background:#FBEFD5;color:#8A5B00}
+.pf-poor{background:#FBE1DC;color:#9C2F1C}
+.pf-scale{margin:12px 0 6px;padding:10px 12px;background:var(--sky-soft);border-radius:10px;font-size:13.5px}
+@media (max-width:380px){.pf-v{font-size:26px}.pf-table{font-size:13px}}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){.sheet{transition:none}}
 .install{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:35;max-width:536px;margin:0 auto;background:var(--navy);color:var(--bg);border-radius:14px;padding:12px 40px 12px 14px;font-size:14px;line-height:1.4;box-shadow:0 6px 20px rgba(0,0,0,.18)}
@@ -276,6 +351,132 @@ button{cursor:pointer}
     </div>
     <p class="foot" data-t="foot"></p>
   </main>
+
+  <!-- DOSE CALCULATOR -->
+  <main id="tab-dose" hidden>
+    <div class="page-h"><h1 data-dz="title"></h1><p data-dz="lede"></p></div>
+
+    <section class="dz-card">
+      <h2 class="dz-h"><span class="dz-n">1</span><span data-dz="s1"></span></h2>
+      <div class="dz-prods" id="dzProds" role="group"></div>
+      <div class="dz-info" id="dzInfo"></div>
+      <div class="dz-grid" id="dzStd">
+        <div class="dz-full"><label for="dzDose" data-dz="dose"></label><select id="dzDose"></select></div>
+        <div class="dz-full"><label for="dzDays" data-dz="days"></label><select id="dzDays"></select></div>
+      </div>
+      <div class="dz-grid" id="dzCustom" hidden>
+        <div class="dz-full"><label for="dzCName" data-dz="cName"></label><input id="dzCName" type="text" autocomplete="off"></div>
+        <div class="dz-full"><label data-dz="cForm"></label>
+          <div class="dz-seg" id="dzCForm" role="group">
+            <button type="button" data-v="g" aria-pressed="true" data-dz="powder"></button>
+            <button type="button" data-v="ml" aria-pressed="false" data-dz="liquid"></button>
+          </div></div>
+        <div class="dz-full"><label data-dz="cMethod"></label>
+          <div class="dz-seg" id="dzCMethod" role="group">
+            <button type="button" data-v="kg" aria-pressed="true" data-dz="mKg"></button>
+            <button type="button" data-v="rate" aria-pressed="false" data-dz="mRate"></button>
+          </div></div>
+        <div class="dz-full dz-kg"><label for="dzCDose" data-dz="cDose"></label><input id="dzCDose" type="number" inputmode="decimal" step="0.1" min="0" placeholder="20"></div>
+        <div class="dz-kg"><label for="dzCStrength" data-dz="cStrength"></label><input id="dzCStrength" type="number" inputmode="decimal" step="0.1" min="0" placeholder="500"></div>
+        <div class="dz-kg"><label for="dzCSUnit" data-dz="cSUnit"></label><select id="dzCSUnit"><option value="mg" id="dzCSUnitMg">mg / g</option><option value="pct">%</option></select></div>
+        <div class="dz-full dz-kg"><span class="dz-hint" data-dz="cStrengthHint"></span></div>
+        <div class="dz-full dz-rate" hidden><label for="dzCRate" id="dzCRateLbl"></label><input id="dzCRate" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.5"><span class="dz-hint" data-dz="cRateHint"></span></div>
+        <div class="dz-full"><label for="dzCDays" data-dz="days"></label><input id="dzCDays" type="number" inputmode="numeric" min="1" max="14" value="3"></div>
+      </div>
+    </section>
+
+    <section class="dz-card">
+      <h2 class="dz-h"><span class="dz-n">2</span><span data-dz="s2"></span></h2>
+      <div class="dz-seg" id="dzBird" role="group">
+        <button type="button" data-v="broiler" aria-pressed="true" data-dz="broiler"></button>
+        <button type="button" data-v="layer" aria-pressed="false" data-dz="layer"></button>
+        <button type="button" data-v="local" aria-pressed="false" data-dz="local"></button>
+      </div>
+      <div class="dz-grid">
+        <div><label for="dzBirds" data-dz="birds"></label><input id="dzBirds" type="number" inputmode="numeric" min="1" placeholder="1000"></div>
+        <div><label for="dzAge" data-dz="age"></label><input id="dzAge" type="number" inputmode="numeric" min="1" max="100" placeholder="3"></div>
+        <div class="dz-full" id="dzWeightBox">
+          <label for="dzWeight" data-dz="weight"></label>
+          <input id="dzWeight" type="number" inputmode="decimal" step="0.01" min="0.02" placeholder="0.9">
+          <button type="button" class="dz-link" id="dzEstW" data-dz="estW"></button>
+          <span class="dz-hint" data-dz="weightHint"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="dz-card">
+      <h2 class="dz-h"><span class="dz-n">3</span><span data-dz="s3"></span></h2>
+      <label for="dzWater" data-dz="water"></label>
+      <input id="dzWater" type="number" inputmode="decimal" min="1" step="1" placeholder="180">
+      <button type="button" class="dz-link" id="dzEstWater" data-dz="estWater"></button>
+      <label class="dz-check"><input type="checkbox" id="dzHot"><span data-dz="hot"></span></label>
+      <span class="dz-hint" data-dz="waterHint"></span>
+    </section>
+
+    <section class="dz-result" aria-live="polite">
+      <p class="dz-empty" id="dzEmpty"></p>
+      <div id="dzBody" hidden>
+        <div class="dz-can">
+          <svg viewBox="0 0 100 130" aria-hidden="true">
+            <defs><clipPath id="dzClip"><path d="M14 30 h72 a6 6 0 0 1 6 6 v82 a8 8 0 0 1 -8 8 h-68 a8 8 0 0 1 -8 -8 v-82 a6 6 0 0 1 6 -6z"/></clipPath></defs>
+            <rect x="58" y="8" width="22" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="4"/>
+            <path d="M22 30 v-14 a6 6 0 0 1 6 -6 h20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <rect id="dzFill" x="0" y="50" width="100" height="80" fill="#3AA8E0" clip-path="url(#dzClip)"/>
+            <path d="M14 30 h72 a6 6 0 0 1 6 6 v82 a8 8 0 0 1 -8 8 h-68 a8 8 0 0 1 -8 -8 v-82 a6 6 0 0 1 6 -6z" fill="none" stroke="currentColor" stroke-width="4"/>
+            <text x="50" y="98" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="Lexend, sans-serif">20 L</text>
+          </svg>
+          <div><div class="dz-big" id="dzPerCan"></div><div class="dz-canlbl" id="dzCanLbl"></div></div>
+        </div>
+        <ul class="dz-rows" id="dzRows"></ul>
+        <div class="dz-warn" id="dzWarn" hidden></div>
+        <a class="dz-share" id="dzShare" href="#" data-dz="share"></a>
+      </div>
+    </section>
+
+    <div class="tips">
+      <h3 data-dz="tipsH"></h3>
+      <ul><li data-dz="t1"></li><li data-dz="t2"></li><li data-dz="t3"></li><li data-dz="t4"></li><li data-dz="t5"></li></ul>
+    </div>
+    <p class="foot" data-dz="disc"></p>
+  </main>
+  <!-- FARM PERFORMANCE -->
+  <main id="tab-perf" hidden>
+    <div class="page-h"><h1 data-pf="title"></h1><p data-pf="lede"></p></div>
+    <section class="dz-card">
+      <h2 class="dz-h"><span class="dz-n">1</span><span data-pf="s1"></span></h2>
+      <div class="dz-grid" style="margin-top:0">
+        <div><label for="pfPlaced" data-pf="placed"></label><input id="pfPlaced" type="number" inputmode="numeric" min="1" placeholder="1000"></div>
+        <div><label for="pfAlive" data-pf="alive"></label><input id="pfAlive" type="number" inputmode="numeric" min="1" placeholder="950"></div>
+        <div><label for="pfAge" data-pf="ageD"></label><input id="pfAge" type="number" inputmode="numeric" min="1" max="80" placeholder="35"></div>
+        <div><label for="pfW" data-pf="avgW"></label><input id="pfW" type="number" inputmode="decimal" step="0.01" min="0.1" placeholder="2.0"></div>
+        <div class="dz-full"><span class="dz-hint" data-pf="ageHint"></span></div>
+        <div><label for="pfFeed" data-pf="feed"></label><input id="pfFeed" type="number" inputmode="decimal" min="1" placeholder="3000"></div>
+        <div><label for="pfFeedU" data-pf="unit"></label><select id="pfFeedU"><option value="kg">kg</option><option value="bag" data-pf="bags"></option></select></div>
+        <div class="dz-full"><span class="dz-hint" data-pf="feedHint"></span></div>
+      </div>
+    </section>
+
+    <section class="dz-result" aria-live="polite">
+      <p class="dz-empty" id="pfEmpty"></p>
+      <div id="pfBody" hidden>
+        <div class="pf-kpis">
+          <div class="pf-kpi"><div class="pf-k">FCR</div><div class="pf-v" id="pfFcr"></div><div class="pf-s" data-pf="fcrSub"></div></div>
+          <div class="pf-kpi"><div class="pf-k">EPEF</div><div class="pf-v" id="pfEpef"></div><div class="pf-s" id="pfRating"></div></div>
+          <div class="pf-kpi"><div class="pf-k" data-pf="liv"></div><div class="pf-v" id="pfLiv"></div><div class="pf-s" id="pfMort"></div></div>
+          <div class="pf-kpi"><div class="pf-k" data-pf="adg"></div><div class="pf-v" id="pfAdg"></div><div class="pf-s" id="pfTotW"></div></div>
+        </div>
+        <a class="dz-share" id="pfShare" href="#" data-pf="share"></a>
+      </div>
+    </section>
+
+    <section class="dz-card" id="pfCmpCard" hidden>
+      <h2 class="dz-h" id="pfCmpH"></h2>
+      <div class="pf-table" id="pfTable"></div>
+      <p class="pf-scale" data-pf="scale"></p>
+      <p class="dz-hint" data-pf="note"></p>
+      <p class="dz-hint" data-pf="formula"></p>
+    </section>
+  </main>
 </div>
 
 <!-- DETAIL -->
@@ -293,10 +494,11 @@ button{cursor:pointer}
 <div class="install" id="install" hidden><b data-t="instH"></b><span id="instP"></span><button class="x" id="instX" aria-label="Close">×</button></div>
 <nav class="nav" aria-label="Main">
   <div class="nav-in">
-    <button data-tab="products" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="14" rx="2"/><path d="M9 7V4h6v3M10 13h4M12 11v4"/></svg><span data-t="navProducts"></span></button>
-    <button data-tab="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg><span data-t="navGuide"></span></button>
-    <button data-tab="vet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1M17 11l2 2 3-3"/></svg><span data-t="navVet"></span></button>
-    <a class="nav-link" href="https://app.cenova.site/dose/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h2M14 19h2"/></svg><span data-t="navDose"></span></a>
+    <button data-tab="products" aria-current="page"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="3.5" rx="1"/><path d="M8.5 6v2.2C6.5 9 5.5 10.5 5.5 12.3V19a2.5 2.5 0 0 0 2.5 2.5h8a2.5 2.5 0 0 0 2.5-2.5v-6.7c0-1.8-1-3.3-3-4.1V6"/><path class="fl" d="M12 12.2v5.2M9.4 14.8h5.2"/></svg></span><span data-t="navProducts"></span></button>
+    <button data-tab="guide"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 5.2c-.1-1.1.8-1.9 1.8-1.5.5-.8 1.8-.6 2 .4"/><path d="M5.6 8.4 3.5 9.3l2.1.6"/><path d="M10.6 7.6c0-2-1.2-3-2.8-3S5 5.8 5 7.6c0 1.2.4 2 1 2.7-.8.9-1.3 2-1.3 3.3 0 3.9 3.2 6.6 7.3 6.6 4.4 0 7.8-3.1 7.8-7.4V7.2l-2.6 2.2c-1.6-1.2-3.8-1.2-5.6 0"/><path d="M10.5 20.2V22M13.8 20.2V22"/><path d="M9.5 14.4c1 1.3 2.8 1.9 4.6 1.4"/><circle cx="7.6" cy="7.3" r=".4" fill="currentColor"/></svg></span><span data-t="navGuide"></span></button>
+    <button data-tab="vet"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2.8H4.5A1.5 1.5 0 0 0 3 4.3V8a5 5 0 0 0 10 0V4.3a1.5 1.5 0 0 0-1.5-1.5H11"/><path d="M8 13v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="19" cy="10.5" r="2.5"/></svg></span><span data-t="navVet"></span></button>
+    <button data-tab="dose"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2.5"/><rect x="7.5" y="5.5" width="9" height="4" rx="1"/><path d="M8 13.2h.01M12 13.2h.01M16 13.2h.01M8 17.2h.01M12 17.2h.01" stroke-width="2.4"/><path d="M16 15.6c-.8 1-1.2 1.6-1.2 2.2a1.2 1.2 0 0 0 2.4 0c0-.6-.4-1.2-1.2-2.2z"/></svg></span><span data-t="navDose"></span></button>
+    <button data-tab="perf"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 3.5v15.5a1.5 1.5 0 0 0 1.5 1.5h15.5"/><path d="M8 16v-3M12 16v-5.5M16 16v-2"/><path d="m7.5 9.5 4-3.5 3 2.5 5-4.5"/><path d="M16.5 4h3v3"/></svg></span><span data-t="navPerf"></span></button>
   </div>
 </nav>
 
@@ -310,44 +512,44 @@ const T = {
   all:"All",poultry:"Poultry",cattle:"Cattle & calves",smallrum:"Sheep & goats",pigs:"Pigs",
   water:"In drinking water",inj:"Injection",oral:"Oral / in water",
   nProducts:n=>n+(n===1?" product":" products"),empty:"No product matches your search.",clear:"Show all products",
-  back:"Back",composition:"What it contains",uses:"What it treats",dose:"How much to give",withdrawal:"Withdrawal period",
-  notes:"Important",missingH:"Withdrawal period",missing:"Not listed for this product. Ask the vet before selling milk or meat from treated animals.",
+  back:"Back",composition:"What it contains",uses:"What it treats",dose:"How much to give",
+  notes:"Important",
   prescription:"Prescription-only medicine",
-  calcH:"Work out the amount",calcHintW:"Type how many litres of drinking water you will mix.",calcHintI:"Type the animal's weight.",
+  calcH:"Work out the amount",pcHint:"For poultry in drinking water. Results update as you type.",calcHintW:"Type how many litres of drinking water you will mix.",calcHintI:"Type the animal's weight.",
   litres:"Litres of water",weight:"Animal weight",species:"Animal",
   calcCheck:"Always confirm the dose with the vet before treating.",
   sites:n=>"Split into "+n+" injection sites",
   callVet:"Call vet",askWa:"Ask on WhatsApp",call:"Call",sms:"Send SMS",
-  navProducts:"Products",navGuide:"Poultry guide",navVet:"Vet help",navDose:"Dose calculator",
+  navProducts:"Products",navGuide:"Poultry guide",navVet:"Vet help",navDose:"Calculator",navPerf:"Performance",
   guideH:"Poultry problems and what to use",guideP:"Tap a problem to see the product and full dose.",
   guideNote:"Confirm the disease in your flock before treating. If birds are dying quickly, call the vet first.",
   vetH:"Talk to a veterinarian",vetP:"Call or message Dr Helal for advice on sick animals, doses and which product to buy.",
   tipsH:"When you contact the vet, tell him",
   tips:["Which animal, how many, and their age","What you see: signs, how many are sick or dead, since when","Any medicine you have already given","A photo or short video helps a lot on WhatsApp"],
   distLabel:"Authorised distributor in Tanzania",mfrLabel:"Manufacturer",
-  instH:"Install this app on your iPhone",instP:"Tap the Share button {s} at the bottom of Safari, then choose Add to Home Screen.",foot:"For veterinary use only. Observe the withdrawal periods on each product.",
+  instH:"Install this app on your iPhone",instP:"Tap the Share button {s} at the bottom of Safari, then choose Add to Home Screen.",foot:"For veterinary use only.",
   waMsg:"Hello Dr Helal, I am a farmer and I need advice.",waMsgP:p=>"Hello Dr Helal, I need advice about "+p+"."},
  sw:{heroH:"Pata dawa sahihi na kipimo kwa mifugo yako",heroP:"Dawa za MEDMAC zilizosajiliwa, zinauzwa Tanzania na CENOVA.",
   vetRole:"Daktari wa mifugo · ushauri kwa wafugaji",search:"Tafuta dawa au ugonjwa…",
   all:"Zote",poultry:"Kuku",cattle:"Ng'ombe na ndama",smallrum:"Kondoo na mbuzi",pigs:"Nguruwe",
   water:"Kwenye maji ya kunywa",inj:"Sindano",oral:"Kwa mdomo / majini",
   nProducts:n=>"Dawa "+n,empty:"Hakuna dawa inayolingana na utafutaji wako.",clear:"Onyesha dawa zote",
-  back:"Rudi",composition:"Viambato",uses:"Inatibu nini",dose:"Kipimo cha kutoa",withdrawal:"Muda wa kusubiri",
-  notes:"Muhimu",missingH:"Muda wa kusubiri",missing:"Haujaorodheshwa kwa dawa hii. Muulize daktari kabla ya kuuza maziwa au nyama ya mnyama aliyetibiwa.",
+  back:"Rudi",composition:"Viambato",uses:"Inatibu nini",dose:"Kipimo cha kutoa",
+  notes:"Muhimu",
   prescription:"Dawa kwa cheti cha daktari tu",
-  calcH:"Piga hesabu ya kiasi",calcHintW:"Andika lita za maji ya kunywa utakazochanganya.",calcHintI:"Andika uzito wa mnyama.",
+  calcH:"Piga hesabu ya kiasi",pcHint:"Kwa kuku kwenye maji ya kunywa. Majibu yanabadilika unapoandika.",calcHintW:"Andika lita za maji ya kunywa utakazochanganya.",calcHintI:"Andika uzito wa mnyama.",
   litres:"Lita za maji",weight:"Uzito wa mnyama",species:"Mnyama",
   calcCheck:"Thibitisha kipimo na daktari kabla ya kutibu.",
   sites:n=>"Gawa kwenye sehemu "+n+" za kuchoma sindano",
   callVet:"Mpigie daktari",askWa:"Uliza WhatsApp",call:"Piga simu",sms:"Tuma SMS",
-  navProducts:"Dawa",navGuide:"Mwongozo wa kuku",navVet:"Daktari",navDose:"Kikokotoo",
+  navProducts:"Dawa",navGuide:"Mwongozo wa kuku",navVet:"Daktari",navDose:"Kikokotoo",navPerf:"Utendaji",
   guideH:"Magonjwa ya kuku na dawa ya kutumia",guideP:"Gusa ugonjwa kuona dawa na kipimo kamili.",
   guideNote:"Hakikisha ugonjwa kwenye kundi kabla ya kutibu. Kuku wakifa kwa haraka, mpigie daktari kwanza.",
   vetH:"Ongea na daktari wa mifugo",vetP:"Mpigie au mtumie ujumbe Dkt. Helal kwa ushauri kuhusu mifugo wagonjwa, vipimo na dawa ya kununua.",
   tipsH:"Unapomwasiliana na daktari, mweleze",
   tips:["Aina ya mnyama, idadi yao na umri","Unachoona: dalili, wangapi wagonjwa au wamekufa, tangu lini","Dawa yoyote uliyokwisha kutoa","Picha au video fupi kwenye WhatsApp inasaidia sana"],
   distLabel:"Msambazaji aliyeidhinishwa Tanzania",mfrLabel:"Mtengenezaji",
-  instH:"Weka programu hii kwenye iPhone yako",instP:"Gusa kitufe cha Share {s} chini ya Safari, kisha chagua Add to Home Screen.",foot:"Kwa matumizi ya mifugo tu. Zingatia muda wa kusubiri wa kila dawa.",
+  instH:"Weka programu hii kwenye iPhone yako",instP:"Gusa kitufe cha Share {s} chini ya Safari, kisha chagua Add to Home Screen.",foot:"Kwa matumizi ya mifugo tu.",
   waMsg:"Habari Dkt. Helal, mimi ni mfugaji na ninahitaji ushauri.",waMsgP:p=>"Habari Dkt. Helal, ninahitaji ushauri kuhusu "+p+"."}
 };
 
@@ -355,24 +557,20 @@ const T = {
 const MEDACOX={cls:{en:"Anticoccidial",sw:"Dawa ya koksidiosisi"},comp:"Toltrazuril 25 mg/ml",sp:"p",form:"water",
  uses:{en:"Coccidiosis in chickens and turkeys (Eimeria spp.).",sw:"Koksidiosisi kwa kuku na bata mzinga (Eimeria spp.)."},
  dose:{en:"200 ml per 200 L drinking water for 48 hours, or 600 ml per 200 L for 8 hours a day for 2 days.",sw:"ml 200 kwa lita 200 za maji ya kunywa kwa saa 48, au ml 600 kwa lita 200 kwa saa 8 kila siku kwa siku 2."},
- wd:{en:"Not for laying birds. Do not use in pullets older than 15 weeks.",sw:"Isitumike kwa kuku wanaotaga. Isitumike kwa kuku wachanga (pullets) wenye zaidi ya wiki 15."},
  calc:{type:"water",unit:"ml",min:1,max:1,note:{en:"48-hour treatment",sw:"Tiba ya saa 48"}},
  keys:"coccidiosis kuhara damu koksidiosisi"};
 const MACTIL={cls:{en:"Antibacterial · macrolide",sw:"Antibiotiki · macrolide"},comp:"Tilmicosin 250 mg/ml",sp:"pc",form:"water",
  uses:{en:"Respiratory disease in chickens and turkeys (Mycoplasma); respiratory disease in calves.",sw:"Magonjwa ya njia ya hewa kwa kuku na bata mzinga (Mycoplasma); magonjwa ya njia ya hewa kwa ndama."},
  dose:{en:"Poultry: 15–20 mg per kg bodyweight in drinking water for 3 days. Calves: 12.5 mg per kg twice a day for 3–5 days.",sw:"Kuku: mg 15–20 kwa kila kilo ya uzito kwenye maji ya kunywa kwa siku 3. Ndama: mg 12.5 kwa kilo mara mbili kwa siku kwa siku 3–5."},
- wd:{en:"Meat: chickens 12 days, turkeys 19 days, calves 42 days. Not for animals producing milk or eggs for people.",sw:"Nyama: kuku siku 12, bata mzinga siku 19, ndama siku 42. Isitumike kwa wanyama wanaotoa maziwa au mayai kwa binadamu."},
  keys:"crd mycoplasma respiratory mafua kupumua"};
 const GENTADIN={cls:{en:"Antibacterial · tetracycline + aminoglycoside",sw:"Antibiotiki · tetracycline + aminoglycoside"},comp:"Doxycycline 110 mg + Gentamycin 165 mg per g",sp:"pcs",form:"water",
  uses:{en:"CRD, coryza, sinusitis, air-sacculitis, colibacillosis and enteritis.",sw:"CRD (mafua sugu ya kuku), koriza, uvimbe wa sainasi, maambukizi ya mifuko ya hewa, colibacillosis na maambukizi ya utumbo."},
  dose:{en:"Poultry: 1 g per 2 L drinking water daily for 3–5 days. Calves, lambs, kids: 1 g per 10–15 kg bodyweight daily.",sw:"Kuku: g 1 kwa lita 2 za maji ya kunywa kila siku kwa siku 3–5. Ndama, wana-kondoo, wana-mbuzi: g 1 kwa kila kilo 10–15 za uzito kila siku."},
- wd:{en:"Meat: calves, lambs, kids 14 days; poultry 7 days. Not for laying hens.",sw:"Nyama: ndama, wana-kondoo, wana-mbuzi siku 14; kuku siku 7. Isitumike kwa kuku wanaotaga."},
  calc:{type:"water",unit:"g",min:.5,max:.5,note:{en:"Poultry, per day",sw:"Kuku, kwa siku"}},
  keys:"crd coryza colibacillosis e. coli enteritis kuhara mafua"};
 const TETRAMED={cls:{en:"Antibacterial · tetracycline",sw:"Antibiotiki · tetracycline"},comp:"Oxytetracycline HCl 500 mg/g",sp:"pcsg",form:"water",
  uses:{en:"Septicaemia, respiratory and digestive infections in chickens, kids, lambs, calves and pigs.",sw:"Maambukizi ya damu, ya njia ya hewa na ya utumbo kwa kuku, wana-mbuzi, wana-kondoo, ndama na nguruwe."},
- dose:{en:"20 mg per kg daily: 200–400 mg of product per litre of drinking water for 3–5 days.",sw:"mg 20 kwa kilo kila siku: mg 200–400 za dawa kwa kila lita ya maji ya kunywa kwa siku 3–5."},
- wd:{en:"Meat and offal 7 days. Not for laying hens.",sw:"Nyama na viungo vya ndani siku 7. Isitumike kwa kuku wanaotaga."},
+ dose:{en:"40 mg per kg daily: 400–800 mg of product per litre of drinking water for 3–5 days.",sw:"mg 40 kwa kilo kila siku: mg 400–800 za dawa kwa kila lita ya maji ya kunywa kwa siku 3–5."},
  calc:{type:"water",unit:"g",min:.2,max:.4,note:{en:"Per day",sw:"Kwa siku"}},
  keys:"septicaemia respiratory gi kuhara"};
 
@@ -390,12 +588,10 @@ const P=[
  {id:8,name:"DOXETYL®",pack:"500 g",cls:{en:"Antibacterial · tetracycline + macrolide",sw:"Antibiotiki · tetracycline + macrolide"},comp:"Doxycycline 200 mg + Tylosin 200 mg per g",sp:"pcs",form:"water",
   uses:{en:"Digestive and respiratory infections in poultry, calves, lambs and kids.",sw:"Maambukizi ya utumbo na ya njia ya hewa kwa kuku, ndama, wana-kondoo na wana-mbuzi."},
   dose:{en:"Calves, lambs, kids: 2.5 g per 100 kg bodyweight twice a day. Poultry: 50 g per 100–200 L drinking water for 3–5 days.",sw:"Ndama, wana-kondoo, wana-mbuzi: g 2.5 kwa kilo 100 za uzito mara mbili kwa siku. Kuku: g 50 kwa lita 100–200 za maji ya kunywa kwa siku 3–5."},
-  wd:{en:"Meat: calves, lambs, kids 14 days; poultry 7 days. Not for laying hens.",sw:"Nyama: ndama, wana-kondoo, wana-mbuzi siku 14; kuku siku 7. Isitumike kwa kuku wanaotaga."},
   calc:{type:"water",unit:"g",min:.25,max:.5,note:{en:"Poultry",sw:"Kuku"}},keys:"respiratory gi salmonella kuhara mafua"},
  {id:9,name:"MEDOMYCIN 35®",pack:"500 g",cls:{en:"Antibacterial · macrolide",sw:"Antibiotiki · macrolide"},comp:"Erythromycin thiocyanate 350 mg/g",sp:"p",form:"water",
   uses:{en:"Chronic respiratory disease (CRD) in poultry caused by Mycoplasma.",sw:"Mafua sugu ya kuku (CRD) yanayosababishwa na Mycoplasma."},
   dose:{en:"50–100 g per 200 L drinking water for 3–5 days.",sw:"g 50–100 kwa lita 200 za maji ya kunywa kwa siku 3–5."},
-  wd:{en:"Meat 6 days; eggs 6 days.",sw:"Nyama siku 6; mayai siku 6."},
   calc:{type:"water",unit:"g",min:.25,max:.5,note:{en:"",sw:""}},keys:"crd mycoplasma mafua"},
  {id:10,name:"TETRAMED® 50%",pack:"100 g",...TETRAMED},
  {id:11,name:"TETRAMED® 50%",pack:"500 g",...TETRAMED},
@@ -424,7 +620,7 @@ const P=[
  {id:16,name:"FLORMAC®",pack:"1 Litre",cls:{en:"Antibacterial · florfenicol",sw:"Antibiotiki · florfenicol"},comp:"Florfenicol 100 mg/ml",sp:"p",form:"water",
   uses:{en:"Digestive and respiratory infections in poultry (Actinobacillus, Pasteurella, Salmonella, Streptococcus).",sw:"Maambukizi ya utumbo na ya njia ya hewa kwa kuku (Actinobacillus, Pasteurella, Salmonella, Streptococcus)."},
   dose:{en:"10 mg per kg daily = 1 L per 1,000 L drinking water for 3 days.",sw:"mg 10 kwa kilo kila siku = lita 1 kwa lita 1,000 za maji ya kunywa kwa siku 3."},
-  wd:{en:"Meat 7 days. Not for laying hens. Do not use galvanised (zinc-coated) water containers.",sw:"Nyama siku 7. Isitumike kwa kuku wanaotaga. Usitumie vyombo vya maji vya bati (galvanised)."},
+  notes:{en:"Do not use galvanised (zinc-coated) water containers.",sw:"Usitumie vyombo vya maji vya bati (galvanised)."},
   calc:{type:"water",unit:"ml",min:1,max:1,note:{en:"Per day",sw:"Kwa siku"}},keys:"salmonella pasteurella fowl cholera kuhara mafua"}
 ];
 
@@ -435,7 +631,7 @@ const GUIDE=[
  {c:{en:"CRD, coryza, sinusitis, colibacillosis",sw:"CRD, koriza, sainasi, colibacillosis"},o:"Mycoplasma, Rickettsia, Klebsiella, E. coli",id:5,d:{en:"1 g / 2 L water daily × 3–5 days",sw:"g 1 / lita 2 kila siku × siku 3–5"}},
  {c:{en:"Respiratory infection, enteritis",sw:"Maambukizi ya hewa, ya utumbo"},o:"Mycoplasma, E. coli, Haemophilus, Clostridium",id:7,d:{en:"25 mg/kg daily × 3–5 days",sw:"mg 25/kilo kila siku × siku 3–5"}},
  {c:{en:"Gut and respiratory infection",sw:"Maambukizi ya utumbo na hewa"},o:"Bordetella, Campylobacter, Salmonella, Staph., Strep.",id:8,d:{en:"50 g / 100–200 L water × 3–5 days",sw:"g 50 / lita 100–200 × siku 3–5"}},
- {c:{en:"Septicaemia, respiratory, gut infection",sw:"Maambukizi ya damu, hewa, utumbo"},o:"Oxytetracycline-sensitive organisms",id:10,d:{en:"200–400 mg / L water × 3–5 days",sw:"mg 200–400 / lita × siku 3–5"}},
+ {c:{en:"Septicaemia, respiratory, gut infection",sw:"Maambukizi ya damu, hewa, utumbo"},o:"Oxytetracycline-sensitive organisms",id:10,d:{en:"400–800 mg / L water × 3–5 days",sw:"mg 400–800 / lita × siku 3–5"}},
  {c:{en:"Gut and respiratory tract infection",sw:"Maambukizi ya utumbo na hewa"},o:"Actinobacillus, Pasteurella, Salmonella, Streptococcus",id:16,d:{en:"1 L / 1,000 L water × 3 days",sw:"lita 1 / lita 1,000 × siku 3"}}
 ];
 
@@ -449,6 +645,270 @@ const spName={p:"poultry",c:"cattle",s:"smallrum",g:"pigs"};
 const chevron='<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
 const fmt=n=>{const r=n>=100?Math.round(n):n>=10?Math.round(n*10)/10:Math.round(n*100)/100;return r.toLocaleString(lang==="sw"?"sw-TZ":"en-GB");};
 
+/* ===== Dose calculator tab ===== */
+const DZT={
+ en:{title:"Poultry dose calculator",lede:"Pick a MEDMAC product, enter your flock and water, and see exactly how much to mix.",
+  s1:"Choose the product",dose:"Dose",days:"Treatment days",
+  s2:"Your flock",broiler:"Broiler",layer:"Layer",local:"Kienyeji",
+  birds:"Number of birds",age:"Age (weeks)",weight:"Average weight per bird (kg)",
+  estW:"Estimate weight from age",weightHint:"Best: weigh 10 birds and take the average.",
+  s3:"Drinking water",water:"Water the flock drinks per day (litres)",estWater:"Estimate water from age",
+  hot:"Hot weather (above 30 °C)",waterHint:"Best: measure what the flock drank yesterday.",
+  emptyKg:"Enter the number of birds, their weight and the daily water to see how much to mix.",
+  emptyRate:"Enter the daily water to see how much to mix.",
+  emptyCustom:"Enter the dose details and the daily water to see how much to mix.",
+  perCan:"in each 20 litre jerrycan",perL:"Per litre of water",perDay:"Product per day",
+  course:"Product for whole treatment",water8:"Water to medicate (8 hours, approx.)",
+  labelRange:"Label guide",outRange:"This result is outside the label guide. Check the bird weight and water again.",
+  share:"Share on WhatsApp",composition:"Composition",day:"days",
+  otherName:"Other",otherInd:"Enter the dose yourself",
+  cName:"Product name (optional)",cForm:"Product type",powder:"Powder",liquid:"Liquid",
+  cMethod:"Dose based on",mKg:"Bird weight (mg/kg)",mRate:"Amount per litre",
+  cDose:"Dose (mg per kg per day)",cStrength:"Product strength",cSUnit:"Unit",
+  cStrengthHint:"From the label. Enter it as mg per g/ml or as %, e.g. 50% = 500 mg per g.",
+  cRate:"Product per litre of water ({u})",cRateHint:"Example: 1 g in 2 L of water = 0.5",
+  tipsH:"Before you mix",
+  t1:"Mix fresh medicated water every day. Do not keep leftovers.",
+  t2:"Remove all other water sources so every bird drinks the medicine.",
+  t3:"Clean drinkers first. Do not use chlorine or disinfectant in the water during treatment.",
+  t4:"Give the full number of days, even if the birds look better.",
+  t5:"Do not mix two products in the same water unless your vet says so.",
+  disc:"This tool helps with arithmetic only. Always follow the product label and your veterinarian's advice."},
+ sw:{title:"Kikokotoo cha dozi kwa kuku",lede:"Chagua dawa ya MEDMAC, weka taarifa za kuku na maji, upate kiasi sahihi cha kuchanganya.",
+  s1:"Chagua dawa",dose:"Dozi",days:"Siku za matibabu",
+  s2:"Kuku wako",broiler:"Kuku wa nyama",layer:"Kuku wa mayai",local:"Kienyeji",
+  birds:"Idadi ya kuku",age:"Umri (wiki)",weight:"Uzito wa wastani kwa kuku (kg)",
+  estW:"Kadiria uzito kwa umri",weightHint:"Bora: pima kuku 10 na uchukue wastani.",
+  s3:"Maji ya kunywa",water:"Maji wanayokunywa kuku kwa siku (lita)",estWater:"Kadiria maji kwa umri",
+  hot:"Hali ya joto kali (zaidi ya 30 °C)",waterHint:"Bora: pima maji waliyokunywa jana.",
+  emptyKg:"Weka idadi ya kuku, uzito wao na maji ya siku ili kuona kiasi cha kuchanganya.",
+  emptyRate:"Weka maji ya siku ili kuona kiasi cha kuchanganya.",
+  emptyCustom:"Weka taarifa za dozi na maji ya siku ili kuona kiasi cha kuchanganya.",
+  perCan:"katika kila dumu la lita 20",perL:"Kwa kila lita ya maji",perDay:"Dawa kwa siku",
+  course:"Dawa kwa matibabu yote",water8:"Maji ya kuwekea dawa (saa 8, makadirio)",
+  labelRange:"Mwongozo wa lebo",outRange:"Jibu hili liko nje ya mwongozo wa lebo. Hakiki tena uzito wa kuku na maji.",
+  share:"Tuma kwa WhatsApp",composition:"Muundo",day:"siku",
+  otherName:"Nyingine",otherInd:"Weka dozi mwenyewe",
+  cName:"Jina la dawa (si lazima)",cForm:"Aina ya dawa",powder:"Unga",liquid:"Kimiminika",
+  cMethod:"Dozi kwa kutumia",mKg:"Uzito wa kuku (mg/kg)",mRate:"Kiasi kwa lita",
+  cDose:"Dozi (mg kwa kg kwa siku)",cStrength:"Nguvu ya dawa",cSUnit:"Kipimo",
+  cStrengthHint:"Kutoka kwenye lebo. Weka kama mg kwa g/ml au kama %, mfano 50% = mg 500 kwa g.",
+  cRate:"Dawa kwa kila lita ya maji ({u})",cRateHint:"Mfano: g 1 kwenye lita 2 za maji = 0.5",
+  tipsH:"Kabla ya kuchanganya",
+  t1:"Changanya maji mapya yenye dawa kila siku. Usibakize mabaki.",
+  t2:"Ondoa vyanzo vingine vyote vya maji ili kila kuku anywe dawa.",
+  t3:"Safisha vinywesheo kwanza. Usitumie klorini wala dawa ya kuua vijidudu kwenye maji wakati wa matibabu.",
+  t4:"Maliza siku zote za matibabu, hata kama kuku wanaonekana kupona.",
+  t5:"Usichanganye dawa mbili kwenye maji moja bila ushauri wa daktari.",
+  disc:"Kifaa hiki kinasaidia hesabu tu. Daima fuata maelekezo ya lebo ya dawa na ushauri wa daktari wa mifugo."}
+};
+const DZP=[
+ {id:"medacox",name:"MEDACOX®",unit:"ml",method:"rate",comp:"Toltrazuril 25 mg/ml",ind:{en:"Coccidiosis",sw:"Koksidiosisi (kuhara damu)"},
+  opts:[{v:1,hours:24,en:"200 ml / 200 L for 48 hours",sw:"ml 200 / lita 200 kwa saa 48"},{v:3,hours:8,en:"600 ml / 200 L for 8 hours daily",sw:"ml 600 / lita 200 kwa saa 8 kila siku"}],days:[2,2]},
+ {id:"mactil",name:"MACTIL®",unit:"ml",method:"kg",strength:250,comp:"Tilmicosin 250 mg/ml",ind:{en:"Chronic respiratory disease (Mycoplasma)",sw:"Magonjwa sugu ya kupumua (CRD)"},
+  opts:[{v:15,en:"15 mg/kg",sw:"mg 15/kg"},{v:20,en:"20 mg/kg",sw:"mg 20/kg"}],days:[3,3]},
+ {id:"medomycin",name:"MEDOMYCIN 35®",unit:"g",method:"rate",comp:"Erythromycin thiocyanate 350 mg/g",ind:{en:"Chronic respiratory disease (Mycoplasma)",sw:"Magonjwa sugu ya kupumua (CRD)"},
+  opts:[{v:0.25,en:"50 g / 200 L",sw:"g 50 / lita 200"},{v:0.5,en:"100 g / 200 L",sw:"g 100 / lita 200"}],days:[3,5]},
+ {id:"gentadin",name:"GENTADIN®",unit:"g",method:"rate",comp:"Doxycycline 110 mg + Gentamycin 165 mg per g",ind:{en:"CRD, coryza, sinusitis, colibacillosis",sw:"CRD, mafua ya kuku, sinusitisi, kolibasilosisi"},
+  opts:[{v:0.5,en:"1 g / 2 L",sw:"g 1 / lita 2"}],days:[3,5]},
+ {id:"doxymed",name:"DOXYMED 500®",unit:"g",method:"kg",strength:500,comp:"Doxycycline hyclate 500 mg/g",ind:{en:"Respiratory infection, enteritis",sw:"Maambukizi ya mfumo wa hewa na tumbo"},
+  opts:[{v:25,en:"25 mg/kg",sw:"mg 25/kg"}],days:[3,5],note:{en:"Prescription-only medicine. Use on a vet's prescription.",sw:"Dawa hii hutolewa kwa agizo la daktari wa mifugo tu."}},
+ {id:"doxetyl",name:"DOXETYL®",unit:"g",method:"rate",comp:"Doxycycline 200 mg + Tylosin 200 mg per g",ind:{en:"GI and respiratory infection",sw:"Maambukizi ya tumbo na mfumo wa hewa"},
+  opts:[{v:0.25,en:"50 g / 200 L",sw:"g 50 / lita 200"},{v:0.5,en:"50 g / 100 L",sw:"g 50 / lita 100"}],days:[3,5]},
+ {id:"tetramed",name:"TETRAMED® 50%",unit:"g",method:"kg",strength:500,comp:"Oxytetracycline HCl 500 mg/g",ind:{en:"Septicaemia, respiratory, GI infection",sw:"Sumu ya damu, maambukizi ya hewa na tumbo"},
+  opts:[{v:40,en:"40 mg/kg",sw:"mg 40/kg"}],days:[3,5],range:[0.4,0.8]},
+ {id:"flormac",name:"FLORMAC®",unit:"ml",method:"kg",strength:100,comp:"Florfenicol 100 mg/ml",ind:{en:"GI and respiratory tract infection",sw:"Maambukizi ya tumbo na mfumo wa hewa"},
+  opts:[{v:10,en:"10 mg/kg",sw:"mg 10/kg"}],days:[3,3],range:[1,1],note:{en:"Do not use galvanized (zinc-coated) containers.",sw:"Usitumie vyombo vya bati (vilivyopakwa zinki)."}},
+ {id:"other",custom:true}
+];
+const DZ_BW=[65,120,180,230,280,320,350], DZ_WT=[0.18,0.45,0.9,1.4,2.0,2.5,3.0];
+let dzProd=DZP[0], dzBird="broiler", dzForm="g", dzMethod="kg", dzReady=false;
+const dz=id=>document.getElementById(id);
+const dzNum=id=>{const v=parseFloat(dz(id).value);return isFinite(v)?v:NaN;};
+const dzT=k=>DZT[lang][k];
+const dzDaysTxt=n=>lang==="sw"?`siku ${n}`:`${n} days`;
+function dzFmt(x,u){if(!isFinite(x))return "—";const d=x>=100?0:x>=10?1:2;return x.toLocaleString(lang==="sw"?"sw-TZ":"en-GB",{maximumFractionDigits:d})+(u?" "+u:"");}
+function dzPress(group,btn){group.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===btn));}
+
+function renderDose(){
+  if(!dz("tab-dose")) return;
+  document.querySelectorAll("[data-dz]").forEach(el=>{const v=dzT(el.dataset.dz); if(typeof v==="string") el.textContent=v;});
+  dz("dzProds").innerHTML=DZP.map(p=>`<button type="button" class="dz-prod" data-id="${p.id}" aria-pressed="${p===dzProd}"><b>${p.custom?dzT("otherName"):p.name}</b><span>${esc(p.custom?dzT("otherInd"):p.ind[lang])}</span></button>`).join("");
+  if(!dzReady){dzWire();dzReady=true;}
+  dzProductInfo(); dzCalc();
+}
+function dzProductInfo(){
+  const c=!!dzProd.custom;
+  dz("dzCustom").hidden=!c; dz("dzStd").hidden=c; dz("dzInfo").hidden=c;
+  if(c){
+    dz("dzCSUnitMg").textContent="mg / "+dzForm;
+    dz("dzCStrength").placeholder=dz("dzCSUnit").value==="pct"?"50":"500";
+    dz("dzCRateLbl").textContent=dzT("cRate").replace("{u}",dzForm);
+    document.querySelectorAll(".dz-kg").forEach(e=>e.hidden=dzMethod!=="kg");
+    document.querySelectorAll(".dz-rate").forEach(e=>e.hidden=dzMethod!=="rate");
+    dz("dzWeightBox").hidden=dzMethod!=="kg";
+    return;
+  }
+  let h=`<b>${esc(dzT("composition"))}:</b> ${esc(dzProd.comp)}`;
+  if(dzProd.note) h+=`<div class="dz-pnote">${esc(dzProd.note[lang])}</div>`;
+  dz("dzInfo").innerHTML=h;
+  const di=dz("dzDose").selectedIndex;
+  dz("dzDose").innerHTML=dzProd.opts.map((o,i)=>`<option value="${i}">${esc(o[lang])}</option>`).join("");
+  dz("dzDose").selectedIndex=di>=0&&di<dzProd.opts.length?di:dzProd.opts.length-1;
+  const dv=+dz("dzDays").value,[a,b]=dzProd.days;let o="";
+  for(let d=a;d<=b;d++) o+=`<option value="${d}">${dzDaysTxt(d)}</option>`;
+  dz("dzDays").innerHTML=o; if(dv>=a&&dv<=b) dz("dzDays").value=dv;
+  dz("dzWeightBox").hidden=dzProd.method!=="kg";
+}
+function dzEstWeight(){
+  const w=dzNum("dzAge"); if(!(w>0)){dz("dzAge").focus();return;}
+  let kg; if(dzBird==="broiler") kg=DZ_WT[Math.min(Math.max(Math.round(w),1),7)-1];
+  else if(dzBird==="layer") kg=Math.min(1.7,0.07+0.09*(w-1)); else kg=Math.min(1.6,0.05+0.07*(w-1));
+  dz("dzWeight").value=kg.toFixed(2); dzCalc();
+}
+function dzEstWater(){
+  const n=dzNum("dzBirds"),w=dzNum("dzAge");
+  if(!(n>0)){dz("dzBirds").focus();return;} if(!(w>0)){dz("dzAge").focus();return;}
+  const wk=Math.min(Math.max(Math.round(w),1),7); let per;
+  if(dzBird==="broiler") per=DZ_BW[wk-1]; else if(w>=18) per=dzBird==="layer"?250:200;
+  else per=Math.min(220,DZ_BW[wk-1]*0.6+(w>7?(w-7)*10:0));
+  if(dz("dzHot").checked) per*=1.3;
+  dz("dzWater").value=Math.round(n/1000*per); dzCalc();
+}
+function dzCalc(){
+  let pr,opt,days;
+  if(dzProd.custom){
+    const v=dzMethod==="kg"?dzNum("dzCDose"):dzNum("dzCRate");
+    pr={name:dz("dzCName").value.trim()||dzT("otherName"),unit:dzForm,method:dzMethod,strength:dzNum("dzCStrength")*(dz("dzCSUnit").value==="pct"?10:1)};
+    opt={v,hours:24}; opt[lang]=dzMethod==="kg"?`${dzFmt(v,"")} mg/kg`:`${dzFmt(v,dzForm)} / L`;
+    days=parseInt(dz("dzCDays").value)>0?parseInt(dz("dzCDays").value):1;
+  }else{pr=dzProd;opt=dzProd.opts[dz("dzDose").selectedIndex]||dzProd.opts[0];days=parseInt(dz("dzDays").value)||dzProd.days[0];}
+  const u=pr.unit,n=dzNum("dzBirds"),kg=dzNum("dzWeight"),water=dzNum("dzWater");
+  const ok=pr.method==="kg"?(n>0&&kg>0&&water>0&&opt.v>0&&pr.strength>0):(water>0&&opt.v>0);
+  dz("dzEmpty").textContent=dzProd.custom?dzT("emptyCustom"):(pr.method==="kg"?dzT("emptyKg"):dzT("emptyRate"));
+  dz("dzEmpty").hidden=ok; dz("dzBody").hidden=!ok; if(!ok) return;
+  let perL,prodDay,medWater=water,extra="";
+  if(pr.method==="kg"){prodDay=n*kg*opt.v/pr.strength;perL=prodDay/water;}
+  else{perL=opt.v; if(opt.hours===8){medWater=water/3;extra=`<li><span>${esc(dzT("water8"))}</span><span>${dzFmt(medWater,"L")}</span></li>`;} prodDay=perL*medWater;}
+  const perCan=perL*20,course=prodDay*days;
+  dz("dzPerCan").innerHTML=`${dzFmt(perCan,"")}<small>${u}</small>`;
+  dz("dzCanLbl").textContent=`${pr.name} ${dzT("perCan")}`;
+  let rows=`<li><span>${esc(dzT("perL"))}</span><span>${dzFmt(perL,u)}</span></li>`+extra+
+    `<li><span>${esc(dzT("perDay"))}</span><span>${dzFmt(prodDay,u)}</span></li>`+
+    `<li><span>${esc(dzT("course"))}</span><span>${dzFmt(course,u)} (${dzDaysTxt(days)})</span></li>`;
+  if(!dzProd.custom&&dzProd.range){const[lo,hi]=dzProd.range;
+    rows+=`<li><span>${esc(dzT("labelRange"))}</span><span>${lo===hi?dzFmt(lo,u):dzFmt(lo,"")+"–"+dzFmt(hi,u)} / L</span></li>`;
+    dz("dzWarn").hidden=!(perL<lo*0.4||perL>hi*2); dz("dzWarn").textContent=dzT("outRange");
+  }else dz("dzWarn").hidden=true;
+  dz("dzRows").innerHTML=rows;
+  const h=Math.max(30,Math.min(78,30+perCan*2)); dz("dzFill").setAttribute("y",128-h); dz("dzFill").setAttribute("height",h);
+  const msg=[`${pr.name} — ${opt[lang]}`,`${dzT("perCan")}: ${dzFmt(perCan,u)}`,`${dzT("perL")}: ${dzFmt(perL,u)}`,
+    `${dzT("perDay")}: ${dzFmt(prodDay,u)}`,`${dzT("course")}: ${dzFmt(course,u)} (${dzDaysTxt(days)})`].join("\n");
+  dz("dzShare").href="https://wa.me/?text="+encodeURIComponent(msg);
+}
+function dzWire(){
+  dz("dzProds").addEventListener("click",e=>{const b=e.target.closest(".dz-prod");if(!b)return;
+    dzProd=DZP.find(p=>p.id===b.dataset.id); dz("dzDose").selectedIndex=-1; dzPress(dz("dzProds"),b); dzProductInfo(); dzCalc();});
+  [["dzBird",v=>dzBird=v],["dzCForm",v=>dzForm=v],["dzCMethod",v=>dzMethod=v]].forEach(([id,set])=>
+    dz(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dzPress(dz(id),b);set(b.dataset.v);dzProductInfo();dzCalc();}));
+  dz("dzEstW").addEventListener("click",dzEstWeight);
+  dz("dzEstWater").addEventListener("click",dzEstWater);
+  dz("dzHot").addEventListener("change",()=>{if(dz("dzWater").value)dzEstWater();});
+  dz("tab-dose").querySelectorAll("input,select").forEach(el=>{el.addEventListener("input",dzCalc);el.addEventListener("change",dzCalc);});
+  dz("dzCSUnit").addEventListener("change",dzProductInfo);
+}
+/* ===== end dose calculator ===== */
+
+/* ===== Farm performance tab (FCR / EPEF) ===== */
+// Ross 308 as-hatched performance objectives, Aviagen 2022: day 21–56 body weight (g) and cumulative FCR
+const ROSS_W=[1012,1092,1174,1258,1345,1434,1524,1616,1710,1805,1901,1999,2097,2196,2296,2396,2496,2597,2697,2798,2898,2998,3097,3197,3295,3393,3490,3586,3681,3776,3869,3961,4052,4142,4230,4318];
+const ROSS_F=[1.142,1.160,1.178,1.196,1.214,1.233,1.251,1.269,1.288,1.306,1.325,1.343,1.362,1.381,1.399,1.418,1.437,1.456,1.474,1.493,1.512,1.531,1.550,1.569,1.587,1.606,1.625,1.644,1.663,1.681,1.700,1.719,1.738,1.756,1.775,1.793];
+const REF_LIV=96;
+const PFT={
+ en:{title:"Farm performance (broilers)",lede:"Enter your flock results at sale to see FCR and EPEF, compared with the Ross 308 world standard.",
+  s1:"Flock record",placed:"Chicks placed",alive:"Birds alive at sale",ageD:"Age at sale (days)",avgW:"Average live weight (kg)",
+  ageHint:"The Ross 308 standard covers 21 to 56 days.",feed:"Total feed used",unit:"Unit",bags:"Bags of 50 kg",
+  feedHint:"Count all feed delivered to the house, minus any left over.",
+  fcrSub:"kg feed per kg live weight",liv:"Livability",mort:"Mortality",adg:"Daily gain",totW:"Total live weight",
+  cmpH:"Compared with Ross 308 at day {d}",mCol:"Measure",yCol:"Your farm",sCol:"Standard",weight:"Live weight",
+  good:"On target",close:"Close",poor:"Below",
+  rPoor:"Poor",rAvg:"Average",rGood:"Good",rExc:"Excellent",
+  scale:"EPEF scale: under 300 poor, 300–349 average, 350–399 good, 400 and above excellent.",
+  note:"Standard: Ross 308 as-hatched performance objectives (Aviagen 2022), reachable under good management. Standard EPEF assumes 96% livability. Farm FCR includes feed eaten by birds that died, so it is usually a little higher than the standard.",
+  formula:"FCR = feed ÷ total live weight. EPEF = (livability % × average weight kg × 100) ÷ (age in days × FCR).",
+  empty:"Fill in all the boxes to see your FCR, EPEF and how your farm compares.",
+  errAlive:"Birds alive cannot be more than chicks placed. Check the numbers.",
+  noStd:"No Ross 308 standard for this age (21–56 days only).",
+  share:"Share on WhatsApp",shareH:"Farm performance"},
+ sw:{title:"Utendaji wa banda (kuku wa nyama)",lede:"Weka matokeo ya kundi lako wakati wa kuuza uone FCR na EPEF, ukilinganisha na kiwango cha dunia cha Ross 308.",
+  s1:"Kumbukumbu za kundi",placed:"Vifaranga vilivyoingizwa",alive:"Kuku hai wakati wa kuuza",ageD:"Umri wakati wa kuuza (siku)",avgW:"Uzito wa wastani hai (kg)",
+  ageHint:"Kiwango cha Ross 308 ni cha siku 21 hadi 56.",feed:"Jumla ya chakula kilichotumika",unit:"Kipimo",bags:"Mifuko ya kg 50",
+  feedHint:"Hesabu chakula chote kilichoingia bandani, toa kilichobaki.",
+  fcrSub:"kg za chakula kwa kg ya uzito hai",liv:"Waliobaki hai",mort:"Vifo",adg:"Ukuaji kwa siku",totW:"Jumla ya uzito hai",
+  cmpH:"Ukilinganisha na Ross 308 siku ya {d}",mCol:"Kipimo",yCol:"Shamba lako",sCol:"Kiwango",weight:"Uzito hai",
+  good:"Sawa",close:"Karibu",poor:"Chini",
+  rPoor:"Dhaifu",rAvg:"Wastani",rGood:"Nzuri",rExc:"Bora sana",
+  scale:"Kipimo cha EPEF: chini ya 300 dhaifu, 300–349 wastani, 350–399 nzuri, 400 na zaidi bora sana.",
+  note:"Kiwango: malengo ya utendaji ya Ross 308 (Aviagen 2022), yanayofikiwa kwa usimamizi mzuri. EPEF ya kiwango inachukulia 96% ya kuku kubaki hai. FCR ya shamba inajumuisha chakula kilicholiwa na kuku waliokufa, hivyo huwa juu kidogo kuliko kiwango.",
+  formula:"FCR = chakula ÷ jumla ya uzito hai. EPEF = (% waliobaki hai × uzito wa wastani kg × 100) ÷ (umri kwa siku × FCR).",
+  empty:"Jaza visanduku vyote uone FCR, EPEF na ulinganisho wa shamba lako.",
+  errAlive:"Kuku hai hawawezi kuzidi vifaranga vilivyoingizwa. Hakiki namba.",
+  noStd:"Hakuna kiwango cha Ross 308 kwa umri huu (siku 21–56 tu).",
+  share:"Tuma kwa WhatsApp",shareH:"Utendaji wa banda"}
+};
+const pfT=k=>PFT[lang][k];
+let pfReady=false;
+const pfN=(x,d)=>isFinite(x)?x.toLocaleString(lang==="sw"?"sw-TZ":"en-GB",{minimumFractionDigits:d,maximumFractionDigits:d}):"—";
+function pfRating(e){return e>=400?pfT("rExc"):e>=350?pfT("rGood"):e>=300?pfT("rAvg"):pfT("rPoor");}
+function pfChip(s){return `<span class="pf-chip pf-${s}">${esc(pfT(s))}</span>`;}
+function renderPerf(){
+  if(!document.getElementById("tab-perf")) return;
+  document.querySelectorAll("[data-pf]").forEach(el=>{const v=pfT(el.dataset.pf);if(typeof v==="string")el.textContent=v;});
+  if(!pfReady){document.getElementById("tab-perf").querySelectorAll("input,select").forEach(e=>{e.addEventListener("input",pfCalc);e.addEventListener("change",pfCalc);});pfReady=true;}
+  pfCalc();
+}
+function pfCalc(){
+  const g=id=>{const v=parseFloat(document.getElementById(id).value);return isFinite(v)?v:NaN;};
+  const placed=g("pfPlaced"),alive=g("pfAlive"),age=Math.round(g("pfAge")),w=g("pfW");
+  let feed=g("pfFeed"); if(document.getElementById("pfFeedU").value==="bag") feed*=50;
+  const E=document.getElementById("pfEmpty"),B=document.getElementById("pfBody"),C=document.getElementById("pfCmpCard");
+  let msg="";
+  if(!(placed>0&&alive>0&&age>0&&w>0&&feed>0)) msg=pfT("empty");
+  else if(alive>placed) msg=pfT("errAlive");
+  E.textContent=msg; E.hidden=!msg; B.hidden=!!msg; C.hidden=!!msg; if(msg) return;
+
+  const liv=alive/placed*100, totW=alive*w, fcr=feed/totW, epef=liv*w*100/(age*fcr), adg=w*1000/age;
+  document.getElementById("pfFcr").textContent=pfN(fcr,2);
+  document.getElementById("pfEpef").textContent=pfN(epef,0);
+  document.getElementById("pfRating").textContent=pfRating(epef);
+  document.getElementById("pfLiv").textContent=pfN(liv,1)+"%";
+  document.getElementById("pfMort").textContent=pfT("mort")+": "+pfN(100-liv,1)+"%";
+  document.getElementById("pfAdg").textContent=pfN(adg,0)+" g";
+  document.getElementById("pfTotW").textContent=pfT("totW")+": "+pfN(totW,0)+" kg";
+
+  const i=age-21, has=i>=0&&i<ROSS_W.length;
+  document.getElementById("pfCmpH").textContent=has?pfT("cmpH").replace("{d}",age):pfT("noStd");
+  let rows="", share=[`${pfT("shareH")} (${age} d)`,`FCR: ${pfN(fcr,2)}`,`EPEF: ${pfN(epef,0)} (${pfRating(epef)})`,`${pfT("liv")}: ${pfN(liv,1)}%`,`${pfT("weight")}: ${pfN(w,2)} kg`];
+  if(has){
+    const sw=ROSS_W[i]/1000, sf=ROSS_F[i], se=REF_LIV*sw*100/(age*sf);
+    const stW=w>=sw*0.97?"good":w>=sw*0.90?"close":"poor";
+    const stF=fcr<=sf*1.03?"good":fcr<=sf*1.10?"close":"poor";
+    const stE=epef>=se*0.95?"good":epef>=se*0.85?"close":"poor";
+    const stL=liv>=REF_LIV?"good":liv>=93?"close":"poor";
+    const row=(m,y,s,st)=>`<div>${esc(m)}</div><div class="num">${y}</div><div class="num std">${s}</div><div>${pfChip(st)}</div>`;
+    rows=`<div class="th">${esc(pfT("mCol"))}</div><div class="th num">${esc(pfT("yCol"))}</div><div class="th num">${esc(pfT("sCol"))}</div><div class="th"></div>`+
+      row("FCR",pfN(fcr,2),pfN(sf,2),stF)+
+      row("EPEF",pfN(epef,0),pfN(se,0),stE)+
+      row(pfT("weight"),pfN(w,2)+" kg",pfN(sw,2)+" kg",stW)+
+      row(pfT("liv"),pfN(liv,1)+"%",REF_LIV+"%",stL);
+    share.push(`Ross 308 (${age} d): FCR ${pfN(sf,2)}, EPEF ${pfN(se,0)}, ${pfN(sw,2)} kg`);
+  }
+  document.getElementById("pfTable").innerHTML=rows;
+  document.getElementById("pfTable").hidden=!has;
+  document.getElementById("pfShare").href="https://wa.me/?text="+encodeURIComponent(share.join("\n"));
+}
+/* ===== end farm performance ===== */
+
 function applyText(){
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-t]").forEach(el=>{const v=t(el.dataset.t); if(typeof v==="string") el.textContent=v;});
@@ -457,7 +917,7 @@ function applyText(){
   $("#stripWa").href=wa(t("waMsg")); $("#vetWa").href=wa(t("waMsg"));
   $("#vetSms").href="sms:+255765894258?body="+encodeURIComponent(t("waMsg"));
   $("#tips").innerHTML=t("tips").map(x=>"<li>"+esc(x)+"</li>").join("");
-  renderChips(); renderList(); renderGuide(); if(current) renderDetail(current);
+  renderChips(); renderList(); renderGuide(); if(current) renderDetail(current); renderDose(); renderPerf();
 }
 function renderChips(){
   $("#chips").innerHTML=["all","p","c","s","g"].map(k=>{
@@ -489,7 +949,41 @@ function renderGuide(){
     <div class="cond">${esc(g.c[lang])}</div><div class="org">${esc(g.o)}</div>
     <div class="rx"><b>${esc(p.name)}</b><span>${esc(g.d[lang])}</span></div></button>`}).join("");
 }
+const PC_MAP={1:"medacox",2:"medacox",3:"mactil",4:"mactil",5:"gentadin",6:"gentadin",7:"doxymed",8:"doxetyl",9:"medomycin",10:"tetramed",11:"tetramed",16:"flormac"};
+function pcDef(p){const id=PC_MAP[p.id];return id?DZP.find(d=>d.id===id):null;}
+function pcHtml(d){
+  const [a,b]=d.days; let days=""; for(let i=a;i<=b;i++) days+=`<option value="${i}"${i===b?" selected":""}>${dzDaysTxt(i)}</option>`;
+  const kg=d.method==="kg";
+  return `<div class="calc"><h3>${esc(t("calcH"))}</h3><p class="hint">${esc(t("pcHint"))}</p>
+    <div class="pc-grid">
+      ${d.opts.length>1?`<div class="full"><label for="pcDose">${esc(dzT("dose"))}</label><select id="pcDose">${d.opts.map((o,i)=>`<option value="${i}"${i===d.opts.length-1?" selected":""}>${esc(o[lang])}</option>`).join("")}</select></div>`:""}
+      <div class="full"><label for="pcDays">${esc(dzT("days"))}</label><select id="pcDays">${days}</select></div>
+      ${kg?`<div><label for="pcBirds">${esc(dzT("birds"))}</label><input id="pcBirds" type="number" inputmode="numeric" min="1" placeholder="1000"></div>
+      <div><label for="pcKg">${esc(dzT("weight"))}</label><input id="pcKg" type="number" inputmode="decimal" step="0.01" min="0.02" placeholder="0.9"></div>`:""}
+      <div class="full"><label for="pcWater">${esc(dzT("water"))}</label><input id="pcWater" type="number" inputmode="decimal" min="1" placeholder="180"></div>
+    </div>
+    <div id="pcOut" aria-live="polite"></div></div>`;
+}
+function pcRun(d){
+  const g=id=>{const e=document.getElementById(id);if(!e)return NaN;const v=parseFloat(e.value);return isFinite(v)?v:NaN;};
+  const opt=d.opts[document.getElementById("pcDose")?+document.getElementById("pcDose").value:0];
+  const days=+document.getElementById("pcDays").value, water=g("pcWater"), n=g("pcBirds"), kg=g("pcKg"), u=d.unit, out=document.getElementById("pcOut");
+  const ok=d.method==="kg"?(n>0&&kg>0&&water>0):water>0;
+  if(!ok){out.innerHTML="";return;}
+  let perL,prodDay,medWater=water,extra="";
+  if(d.method==="kg"){prodDay=n*kg*opt.v/d.strength;perL=prodDay/water;}
+  else{perL=opt.v;if(opt.hours===8){medWater=water/3;extra=`<li><span>${esc(dzT("water8"))}</span><span>${dzFmt(medWater,"L")}</span></li>`;}prodDay=perL*medWater;}
+  const perCan=perL*20,course=prodDay*days;
+  let warn="";
+  if(d.range){const[lo,hi]=d.range;if(perL<lo*0.4||perL>hi*2)warn=`<div class="pc-warn">${esc(dzT("outRange"))}</div>`;}
+  out.innerHTML=`<div class="pc-res"><div class="pc-big">${dzFmt(perCan,"")}<small>${u}</small></div><div class="pc-lbl">${esc(dzT("perCan"))}</div>
+    <ul><li><span>${esc(dzT("perL"))}</span><span>${dzFmt(perL,u)}</span></li>${extra}
+    <li><span>${esc(dzT("perDay"))}</span><span>${dzFmt(prodDay,u)}</span></li>
+    <li><span>${esc(dzT("course"))}</span><span>${dzFmt(course,u)} (${dzDaysTxt(days)})</span></li></ul>${warn}
+    <span class="pc-chk">${esc(t("calcCheck"))}</span></div>`;
+}
 function calcHtml(p){
+  const pd=pcDef(p); if(pd) return pcHtml(pd);
   const c=p.calc; if(!c) return "";
   if(c.type==="water") return `<div class="calc"><h3>${esc(t("calcH"))}</h3><p class="hint">${esc(t("calcHintW"))}${c.note&&c.note[lang]?" "+esc(c.note[lang])+".":""}</p>
     <label for="cin">${esc(t("litres"))}</label><div class="inrow"><input id="cin" type="number" inputmode="decimal" min="0" placeholder="e.g. 20"><span class="unit">L</span></div>
@@ -515,9 +1009,6 @@ function runCalc(p){
 function renderDetail(id){
   const p=P.find(x=>x.id===id); current=id;
   const sp=[...p.sp].map(k=>`<span>${esc(t(spName[k]))}</span>`).join("");
-  let wd="";
-  if(p.wd) wd=`<div class="block warn"><h3>${esc(t("withdrawal"))}</h3><p>${esc(p.wd[lang])}</p></div>`;
-  else wd=`<div class="block missing"><h3>${esc(t("missingH"))}</h3><p>${esc(t("missing"))}</p></div>`;
   $("#detail").innerHTML=`<div class="d-hero"><div class="d-img"><img src="${IMG[p.id]}" alt="${esc(p.name)} pack"></div>
     <div><h2 id="dName">${esc(p.name)}</h2><div class="pk">${esc(p.pack)}</div><div class="cls">${esc(p.cls[lang])}</div><div class="species">${sp}</div></div></div>
     <div class="block"><h3>${esc(t("uses"))}</h3><p>${esc(p.uses[lang])}</p></div>
@@ -525,10 +1016,11 @@ function renderDetail(id){
     ${calcHtml(p)}
     ${p.notes?`<div class="block warn"><h3>${esc(t("notes"))}</h3><p>${esc(p.notes[lang])}</p></div>`:""}
     ${p.pom?`<div class="block warn"><h3>${esc(t("notes"))}</h3><p>${esc(t("prescription"))}</p></div>`:""}
-    ${wd}
     <div class="block"><h3>${esc(t("composition"))}</h3><p>${esc(p.comp)}</p></div>`;
   $("#askWa").href=wa(t("waMsgP")(p.name+" "+p.pack));
-  if(p.calc){$("#cin").addEventListener("input",()=>runCalc(p)); if($("#csp")) $("#csp").addEventListener("change",()=>runCalc(p));}
+  const pd=pcDef(p);
+  if(pd){["pcDose","pcDays","pcBirds","pcKg","pcWater"].forEach(id=>{const e=document.getElementById(id);if(e){e.addEventListener("input",()=>pcRun(pd));e.addEventListener("change",()=>pcRun(pd));}});}
+  else if(p.calc){$("#cin").addEventListener("input",()=>runCalc(p)); if($("#csp")) $("#csp").addEventListener("change",()=>runCalc(p));}
 }
 function openDetail(id){
   renderDetail(id); const s=$("#sheet"); s.scrollTop=0; s.classList.add("open");
@@ -541,7 +1033,7 @@ function closeDetail(fromPop){
   if(!fromPop){try{history.back();}catch(e){}}
 }
 function setTab(n){
-  tab=n; ["products","guide","vet"].forEach(k=>$("#tab-"+k).hidden=k!==n);
+  tab=n; ["products","guide","vet","dose","perf"].forEach(k=>$("#tab-"+k).hidden=k!==n);
   document.querySelectorAll(".nav button").forEach(b=>b.dataset.tab===n?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current"));
   window.scrollTo(0,0);
 }
