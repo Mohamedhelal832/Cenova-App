@@ -190,9 +190,11 @@ button{cursor:pointer}
 /* bottom nav */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);
   padding-bottom:env(safe-area-inset-bottom,0px)}
-.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr)}
+.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .nav button{border:0;background:transparent;padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;font-weight:500;color:var(--muted)}
 .nav button svg{width:24px;height:24px}
+.nav a.nav-link{padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;font-weight:500;color:var(--muted);text-decoration:none}
+.nav a.nav-link svg{width:24px;height:24px}
 .nav button[aria-current="page"]{color:var(--navy)}
 .nav button[aria-current="page"] svg{color:var(--sky)}
 [hidden]{display:none!important}
@@ -294,6 +296,7 @@ button{cursor:pointer}
     <button data-tab="products" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="14" rx="2"/><path d="M9 7V4h6v3M10 13h4M12 11v4"/></svg><span data-t="navProducts"></span></button>
     <button data-tab="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg><span data-t="navGuide"></span></button>
     <button data-tab="vet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1M17 11l2 2 3-3"/></svg><span data-t="navVet"></span></button>
+    <a class="nav-link" href="/dose/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M8 6h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h2M14 19h2"/></svg><span data-t="navDose"></span></a>
   </div>
 </nav>
 
@@ -315,7 +318,7 @@ const T = {
   calcCheck:"Always confirm the dose with the vet before treating.",
   sites:n=>"Split into "+n+" injection sites",
   callVet:"Call vet",askWa:"Ask on WhatsApp",call:"Call",sms:"Send SMS",
-  navProducts:"Products",navGuide:"Poultry guide",navVet:"Vet help",
+  navProducts:"Products",navGuide:"Poultry guide",navVet:"Vet help",navDose:"Dose calculator",
   guideH:"Poultry problems and what to use",guideP:"Tap a problem to see the product and full dose.",
   guideNote:"Confirm the disease in your flock before treating. If birds are dying quickly, call the vet first.",
   vetH:"Talk to a veterinarian",vetP:"Call or message Dr Helal for advice on sick animals, doses and which product to buy.",
@@ -337,7 +340,7 @@ const T = {
   calcCheck:"Thibitisha kipimo na daktari kabla ya kutibu.",
   sites:n=>"Gawa kwenye sehemu "+n+" za kuchoma sindano",
   callVet:"Mpigie daktari",askWa:"Uliza WhatsApp",call:"Piga simu",sms:"Tuma SMS",
-  navProducts:"Dawa",navGuide:"Mwongozo wa kuku",navVet:"Daktari",
+  navProducts:"Dawa",navGuide:"Mwongozo wa kuku",navVet:"Daktari",navDose:"Kikokotoo",
   guideH:"Magonjwa ya kuku na dawa ya kutumia",guideP:"Gusa ugonjwa kuona dawa na kipimo kamili.",
   guideNote:"Hakikisha ugonjwa kwenye kundi kabla ya kutibu. Kuku wakifa kwa haraka, mpigie daktari kwanza.",
   vetH:"Ongea na daktari wa mifugo",vetP:"Mpigie au mtumie ujumbe Dkt. Helal kwa ushauri kuhusu mifugo wagonjwa, vipimo na dawa ya kununua.",
