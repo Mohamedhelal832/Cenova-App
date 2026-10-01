@@ -1,10 +1,11 @@
 // Offline cache for CENOVA Farmer Help. Raise VERSION when you change any file.
-const VERSION = "cenova-help-v1";
+const VERSION = "cenova-help-v2";
 const FILES = [
   "./", "./index.html", "./manifest.json",
   "./lexend-latin-400-normal.woff2", "./lexend-latin-500-normal.woff2",
   "./lexend-latin-600-normal.woff2", "./lexend-latin-700-normal.woff2",
-  "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png"
+  "./apple-touch-icon.png", "./icon-192.png", "./icon-512.png",
+  "./dose/", "./dose/index.html"
 ];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
