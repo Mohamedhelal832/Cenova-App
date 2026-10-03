@@ -1,5 +1,5 @@
 // Offline cache for CENOVA Farmer Help. Raise VERSION when you change any file.
-const VERSION = "cenova-help-v16";
+const VERSION = "cenova-help-v26";
 const FILES = [
   "./", "./index.html", "./manifest.json",
   "./lexend-latin-400-normal.woff2", "./lexend-latin-500-normal.woff2",

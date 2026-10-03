@@ -224,7 +224,7 @@ button{cursor:pointer}
 /* bottom nav */
 .nav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--surface);border-top:1px solid var(--line);
   padding-bottom:env(safe-area-inset-bottom,0px)}
-.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(6,1fr)}
+.nav-in{max-width:560px;margin:0 auto;display:grid;grid-template-columns:repeat(7,1fr)}
 .nav button{border:0;background:transparent;padding:9px 4px 10px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;font-weight:500;color:var(--muted)}
 .nav button .ic{display:grid;place-items:center;width:58px;height:32px;border-radius:999px;transition:background-color .2s ease}
 .nav button svg{width:24px;height:24px}
@@ -316,7 +316,71 @@ button{cursor:pointer}
 .rf-none{color:var(--muted);text-align:center;padding:20px 0}
 .dz-ingh{display:block;margin-top:6px;padding:8px 12px;border-radius:10px;background:var(--sky-soft);font-size:13.5px;color:var(--ink)}
 .nav button{font-size:11px!important;line-height:1.15;padding-left:2px!important;padding-right:2px!important;text-align:center;justify-content:flex-start}
-.nav button .ic{width:46px!important}
+.nav button .ic{width:40px!important}
+/* poultry diseases */
+.ds-filters{display:flex;gap:8px;overflow-x:auto;margin:8px 18px 10px;padding-bottom:2px}
+.ds-f{flex:none;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:14px;font-weight:500;color:var(--ink)}
+.ds-f[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--bg)}
+#dsList{margin:0 18px}
+.ds-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.ds-item summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:13px 14px;cursor:pointer}
+.ds-item summary::-webkit-details-marker{display:none}
+.ds-item summary::after{content:"";flex:none;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);margin:-4px 4px 0 0;transition:transform .2s}
+.ds-item[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+.ds-name{flex:1;min-width:0}
+.ds-name b{display:block;font-size:16px;font-weight:600;color:var(--navy)}
+.ds-alt{display:block;font-size:12.5px;color:var(--muted)}
+.ds-tags{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.ds-type{font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.ds-v{background:#EDE7F6;color:#5B3A9A}.ds-b{background:var(--sky-soft);color:#1C6E9C}.ds-p{background:var(--gold-soft);color:#7A5A1E}.ds-fu{background:#E3F1E6;color:#2E6B3A}
+.ds-rep{background:#FBE1DC;color:#9C2F1C}
+.ds-body{padding:0 14px 14px;border-top:1px solid var(--line)}
+.ds-sec h4{margin:12px 0 3px;font-size:12.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--sky)}
+.ds-sec p{margin:0;font-size:15px;line-height:1.5}
+.ds-sec.pm{background:var(--gold-soft);border-left:4px solid var(--gold);border-radius:8px;padding:2px 12px 10px;margin-top:12px}
+.ds-sec.pm h4{color:var(--gold)}
+.ds-prods{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.ds-prod{border:1.5px solid var(--gold);background:var(--gold-soft);color:var(--ink);border-radius:999px;padding:7px 12px;font-size:13.5px;font-weight:600}
+.ds-ask{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding:12px;border-radius:12px;background:#1FA855;color:#fff;font-weight:600;text-decoration:none}
+.ds-ask svg{width:18px;height:18px}
+/* vaccination */
+.ds-view{margin:0 18px 12px}
+.vx-lbl{display:block;font-size:14px;font-weight:500;margin:12px 0 4px}
+.vx-in{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:17px;font-family:inherit;color:var(--ink);min-height:48px}
+.vx-list{list-style:none;margin:0 18px;padding:0 0 0 14px;border-left:3px solid var(--sky-soft)}
+.vx-it{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 10px 6px}
+.vx-it::before{content:"";position:absolute;left:-27px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--sky);border:3px solid var(--bg)}
+.vx-it.past{opacity:.55}.vx-it.past::before{background:var(--muted)}
+.vx-it.next,.vx-it.today{border:2px solid var(--gold);box-shadow:0 2px 8px rgba(168,132,62,.18)}
+.vx-it.next::before,.vx-it.today::before{background:var(--gold)}
+.vx-age{font-size:12.5px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--sky)}
+.vx-main b{display:block;font-size:16px;font-weight:600;color:var(--navy);margin-top:2px}
+.vx-m{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--sky-soft);color:#1C6E9C}
+.vx-n{display:block;margin-top:6px;font-size:13.5px;color:var(--muted)}
+.vx-opt{font-size:11.5px;font-weight:600;padding:1px 7px;border-radius:999px;background:var(--gold-soft);color:#7A5A1E;vertical-align:middle}
+.vx-date{display:block;margin-top:8px;font-size:14.5px;font-weight:600}
+.vx-date em{font-style:normal;font-size:12px;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--gold-soft);color:#7A5A1E}
+.vx-it.past .vx-date em{background:var(--line);color:var(--muted)}
+.vx-acts{margin:4px 18px 12px}
+.vx-ask{display:flex;justify-content:center;margin-top:10px;padding:12px;border-radius:12px;border:1.5px solid #1FA855;color:#1FA855;font-weight:600;text-decoration:none}
+/* vet lock */
+.lock{margin:0 18px 14px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center}
+.lock-ic{width:64px;height:64px;margin:0 auto 10px;border-radius:50%;background:var(--sky-soft);color:var(--navy);display:grid;place-items:center}
+.lock-ic svg{width:32px;height:32px}
+.lock h2{margin:0 0 6px;font-size:20px;color:var(--navy)}
+.lock p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.lock label{display:block;text-align:left;font-size:14px;font-weight:500;margin-bottom:4px}
+.lock-row{display:flex;gap:8px}
+.lock-row input{flex:1;min-width:0;padding:11px 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font-size:17px;color:var(--ink);font-family:inherit;min-height:48px}
+.lock-row input:focus{border-color:var(--sky);outline:none}
+.lock-row button{flex:none;border:0;border-radius:10px;background:var(--navy);color:var(--bg);font-weight:600;font-size:15px;padding:0 18px;min-height:48px}
+.lock-err{color:#C0392B!important;font-weight:600;margin:10px 0 0!important;text-align:left}
+.lock-req{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;padding:12px;border-radius:12px;background:#1FA855;color:#fff;font-weight:600;text-decoration:none}
+.lock-req svg{width:18px;height:18px}
+.relock{display:block;margin:4px auto 18px;background:none;border:0;color:var(--muted);text-decoration:underline;font-size:14px}
+.nav button .ic{position:relative}
+.nav-lock{position:absolute;top:-3px;right:-1px;width:13px;height:13px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center}
+.nav-lock svg{width:8px;height:8px}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:reduce){.sheet{transition:none}}
 .install{position:fixed;left:12px;right:12px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:35;max-width:536px;margin:0 auto;background:var(--navy);color:var(--bg);border-radius:14px;padding:12px 40px 12px 14px;font-size:14px;line-height:1.4;box-shadow:0 6px 20px rgba(0,0,0,.18)}
@@ -404,6 +468,53 @@ button{cursor:pointer}
       <div><div data-t="mfrLabel" style="color:var(--muted);font-size:13px"></div><b>Medmac (Veterinary Division)</b><br>P.O. Box 214, Amman 11831, Jordan</div>
     </div>
     <p class="foot" data-t="foot"></p>
+  </main>
+
+  <!-- POULTRY DISEASES -->
+  <main id="tab-dis" hidden>
+    <div class="page-h"><h1 data-ds="title"></h1><p data-ds="lede"></p></div>
+    <section class="lock" id="disLock" hidden>
+      <div class="lock-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.6" r="1.3" fill="currentColor"/></svg></div>
+      <h2 data-lk="lockH"></h2>
+      <p data-lk="lockP"></p>
+      <label for="disPw" data-lk="pwLbl"></label>
+      <div class="lock-row"><input id="disPw" type="password" autocomplete="off"><button type="button" id="disUnlock" data-lk="unlock"></button></div>
+      <p class="lock-err" id="disErr" hidden data-lk="wrong"></p>
+      <a class="lock-req" id="disReq" href="#"></a>
+    </section>
+    <div id="disContent" hidden>
+    <div class="dz-seg ds-view" id="dsView" role="group">
+      <button type="button" data-v="dis" aria-pressed="true" data-vx="tabDis"></button>
+      <button type="button" data-v="vx" aria-pressed="false" data-vx="tabVx"></button>
+    </div>
+    <div id="disView">
+    <div class="rf-search"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="dsSearch" type="search" autocomplete="off"></div></div>
+    <div class="ds-filters" id="dsFilters" role="group"></div>
+    <div id="dsList"></div>
+    <p class="foot" data-ds="foot"></p>
+    </div>
+    <div id="vxView" hidden>
+      <section class="dz-card">
+        <h2 class="dz-h" data-vx="vxTitle"></h2>
+        <p class="dz-hint" style="margin:-6px 0 12px" data-vx="vxLede"></p>
+        <div class="dz-seg" id="vxType" role="group">
+          <button type="button" data-v="broiler" aria-pressed="true" data-vx="broiler"></button>
+          <button type="button" data-v="layer" aria-pressed="false" data-vx="layer"></button>
+          <button type="button" data-v="local" aria-pressed="false" data-vx="local"></button>
+        </div>
+        <label for="vxStart" class="vx-lbl" data-vx="arrive"></label>
+        <input id="vxStart" type="date" class="vx-in">
+      </section>
+      <ol class="vx-list" id="vxList"></ol>
+      <div class="vx-acts">
+        <a class="dz-share" id="vxShare" href="#" data-vx="share"></a>
+        <a class="vx-ask" id="vxAsk" href="#" data-vx="ask"></a>
+      </div>
+      <div class="tips"><h3 data-vx="rulesH"></h3><ul id="vxRules"></ul></div>
+      <p class="foot" data-vx="vxNote"></p>
+    </div>
+      <button type="button" class="relock" id="disRelock" data-lk="relock"></button>
+    </div>
   </main>
 
   <!-- DOSE CALCULATOR -->
@@ -598,6 +709,7 @@ button{cursor:pointer}
   <div class="nav-in">
     <button data-tab="products" aria-current="page"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="3.5" rx="1"/><path d="M8.5 6v2.2C6.5 9 5.5 10.5 5.5 12.3V19a2.5 2.5 0 0 0 2.5 2.5h8a2.5 2.5 0 0 0 2.5-2.5v-6.7c0-1.8-1-3.3-3-4.1V6"/><path class="fl" d="M12 12.2v5.2M9.4 14.8h5.2"/></svg></span><span data-t="navProducts"></span></button>
     <button data-tab="guide"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 5.2c-.1-1.1.8-1.9 1.8-1.5.5-.8 1.8-.6 2 .4"/><path d="M5.6 8.4 3.5 9.3l2.1.6"/><path d="M10.6 7.6c0-2-1.2-3-2.8-3S5 5.8 5 7.6c0 1.2.4 2 1 2.7-.8.9-1.3 2-1.3 3.3 0 3.9 3.2 6.6 7.3 6.6 4.4 0 7.8-3.1 7.8-7.4V7.2l-2.6 2.2c-1.6-1.2-3.8-1.2-5.6 0"/><path d="M10.5 20.2V22M13.8 20.2V22"/><path d="M9.5 14.4c1 1.3 2.8 1.9 4.6 1.4"/><circle cx="7.6" cy="7.3" r=".4" fill="currentColor"/></svg></span><span data-t="navGuide"></span></button>
+    <button data-tab="dis"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.6"/><path d="M16.6 12h2.6M15.3 15.3l1.8 1.8M12 16.6v2.6M8.7 15.3l-1.8 1.8M7.4 12H4.8M8.7 8.7 6.9 6.9M12 7.4V4.8M15.3 8.7l1.8-1.8"/><circle cx="20.2" cy="12" r=".9"/><circle cx="17.8" cy="17.8" r=".9"/><circle cx="12" cy="20.2" r=".9"/><circle cx="6.2" cy="17.8" r=".9"/><circle cx="3.8" cy="12" r=".9"/><circle cx="6.2" cy="6.2" r=".9"/><circle cx="12" cy="3.8" r=".9"/><circle cx="17.8" cy="6.2" r=".9"/><circle cx="10.6" cy="11" r=".7" fill="currentColor"/><circle cx="13.4" cy="13.2" r=".7" fill="currentColor"/></svg></span><span data-t="navDis"></span></button>
     <button data-tab="vet"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2.8H4.5A1.5 1.5 0 0 0 3 4.3V8a5 5 0 0 0 10 0V4.3a1.5 1.5 0 0 0-1.5-1.5H11"/><path d="M8 13v1.5a5.5 5.5 0 0 0 11 0V13"/><circle cx="19" cy="10.5" r="2.5"/></svg></span><span data-t="navVet"></span></button>
     <button data-tab="dose"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="2.5" width="15" height="19" rx="2.5"/><rect x="7.5" y="5.5" width="9" height="4" rx="1"/><path d="M8 13.2h.01M12 13.2h.01M16 13.2h.01M8 17.2h.01M12 17.2h.01" stroke-width="2.4"/><path d="M16 15.6c-.8 1-1.2 1.6-1.2 2.2a1.2 1.2 0 0 0 2.4 0c0-.6-.4-1.2-1.2-2.2z"/></svg></span><span data-t="navDose"></span></button>
     <button data-tab="ref"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 19.5V5a2 2 0 0 1 2-2H19.5v16H6.5a2 2 0 0 0-2 2 2 2 0 0 0 2 2h13"/><path d="M10.5 6.5h4M11.3 6.5v2.8l-2.5 4.6a.9.9 0 0 0 .8 1.3h5.8a.9.9 0 0 0 .8-1.3l-2.5-4.6V6.5"/><path d="M9.6 12.2h5.8"/></svg></span><span data-t="navRef"></span></button>
@@ -627,7 +739,7 @@ const T = {
   calcCheck:"Always confirm the dose with the vet before treating.",
   sites:n=>"Split into "+n+" injection sites",
   callVet:"Call vet",askWa:"Ask on WhatsApp",call:"Call",sms:"Send SMS",
-  navProducts:"Products",navGuide:"Poultry guide",navVet:"Vet help",navDose:"Dose Calculator",navRef:"Scientific doses reference",navPerf:"Performance",
+  navProducts:"Products",navGuide:"Poultry guide",navVet:"Vet help",navDis:"Poultry diseases",navDose:"Dose Calculator",navRef:"Scientific doses reference",navPerf:"Performance",
   guideH:"Poultry problems and what to use",guideP:"Tap a problem to see the product and full dose.",
   guideNote:"Confirm the disease in your flock before treating. If birds are dying quickly, call the vet first.",
   vetH:"Talk to our team",vetP:"Call or message our veterinarians for advice on sick animals, doses and which product to use. To order products, contact Mr Wael on WhatsApp.",
@@ -653,7 +765,7 @@ const T = {
   calcCheck:"Thibitisha kipimo na daktari kabla ya kutibu.",
   sites:n=>"Gawa kwenye sehemu "+n+" za kuchoma sindano",
   callVet:"Mpigie daktari",askWa:"Uliza WhatsApp",call:"Piga simu",sms:"Tuma SMS",
-  navProducts:"Dawa",navGuide:"Mwongozo wa kuku",navVet:"Daktari",navDose:"Kikokotoo cha dozi",navRef:"Dozi za kisayansi",navPerf:"Utendaji",
+  navProducts:"Dawa",navGuide:"Mwongozo wa kuku",navVet:"Daktari",navDis:"Magonjwa ya kuku",navDose:"Kikokotoo cha dozi",navRef:"Dozi za kisayansi",navPerf:"Utendaji",
   guideH:"Magonjwa ya kuku na dawa ya kutumia",guideP:"Gusa ugonjwa kuona dawa na kipimo kamili.",
   guideNote:"Hakikisha ugonjwa kwenye kundi kabla ya kutibu. Kuku wakifa kwa haraka, mpigie daktari kwanza.",
   vetH:"Ongea na timu yetu",vetP:"Wapigie au watumie ujumbe madaktari wetu kwa ushauri kuhusu mifugo wagonjwa, vipimo na dawa ya kutumia. Kuagiza dawa, wasiliana na Bw. Wael kwa WhatsApp.",
@@ -1379,6 +1491,363 @@ function renderTeam(){
   $("#teamOrder").innerHTML=TEAM.filter(m=>m.order).map(teamCard).join("");
   $("#teamVets").innerHTML=TEAM.filter(m=>!m.order&&m.id!=="hussein").map(teamCard).join("");
 }
+/* ===== Poultry diseases tab ===== */
+// type: v=virus, b=bacteria, p=parasite, f=fungus. sec=true: products only for secondary bacterial infections
+const DS=[
+ {id:"nd",t:"v",n:{en:"Newcastle disease",sw:"Kideri (Newcastle)"},sec:true,pr:[8,10],
+  c:{en:"Virus (avian paramyxovirus). Extremely contagious.",sw:"Virusi (paramyxovirus). Huambukiza kwa kasi sana."},
+  s:{en:"Gasping and coughing, green watery diarrhoea, twisted neck, paralysis, sudden drop in eggs, many birds dying quickly.",sw:"Kuhema na kukohoa, kuharisha kinyesi cha kijani chenye maji, shingo kupinda, kupooza, mayai kupungua ghafla, kuku wengi kufa haraka."},
+  pm:{en:"Pinpoint bleeding on the tips of the proventriculus glands, bleeding ulcers in the intestine and caecal tonsils, reddened trachea.",sw:"Madoa ya damu kwenye ncha za tezi za tumbo la mbele (proventriculus), vidonda vyenye damu kwenye utumbo na tonsili za utumbo mpana, koromeo jekundu."},
+  sp:{en:"Sick birds, droppings, people, crates, vehicles and wild birds.",sw:"Kuku wagonjwa, kinyesi, watu, makreti, magari na ndege wa porini."},
+  pv:{en:"Vaccinate as your vet advises (village chickens every 3 months with the I-2 vaccine). Keep visitors and new birds away from the flock.",sw:"Chanja kama daktari anavyoshauri (kuku wa kienyeji kila miezi 3 kwa chanjo ya I-2). Zuia wageni na kuku wapya kukaribia kundi."},
+  tr:{en:"No cure. Isolate sick birds and call the vet. Antibiotics only control secondary bacterial infections.",sw:"Hakuna tiba. Tenga kuku wagonjwa na mpigie daktari. Antibiotiki hudhibiti tu maambukizi ya pili ya bakteria."}},
+ {id:"ibd",t:"v",n:{en:"Gumboro (infectious bursal disease)",sw:"Gumboro"},sec:true,pr:[8,10],
+  c:{en:"Virus (birnavirus) that damages the bursa and weakens immunity. Mostly chicks aged 3–6 weeks.",sw:"Virusi (birnavirus) vinavyoharibu bursa na kudhoofisha kinga. Hasa vifaranga wa wiki 3–6."},
+  s:{en:"Sudden start, ruffled feathers, whitish watery diarrhoea, birds sitting hunched and pecking at the vent, many deaths for 5–7 days.",sw:"Huanza ghafla, manyoya kusimama, kuharisha nyeupe yenye maji, kuku kujikunyata na kudonoa sehemu ya haja, vifo vingi kwa siku 5–7."},
+  pm:{en:"Bursa swollen and yellowish with a jelly-like coat (sometimes bloody), later shrunken; bleeding streaks in thigh and breast muscles; pale swollen kidneys.",sw:"Bursa kuvimba na kuwa ya njano yenye ute kama jeli (wakati mwingine yenye damu), baadaye kusinyaa; mistari ya damu kwenye misuli ya paja na kifua; figo kuvimba na kupauka."},
+  sp:{en:"Droppings, litter, equipment and people. The virus survives for months in the house.",sw:"Kinyesi, matandiko, vifaa na watu. Virusi huishi miezi mingi bandani."},
+  pv:{en:"Vaccinate on the days your vet recommends (often around days 10–14 and 18–21). Clean and disinfect the house between flocks.",sw:"Chanja siku anazoshauri daktari (mara nyingi karibu siku 10–14 na 18–21). Safisha na tia dawa banda kati ya makundi."},
+  tr:{en:"No cure. Give clean water with vitamins and electrolytes. The vet may treat secondary infections.",sw:"Hakuna tiba. Wape maji safi yenye vitamini na elektroliti. Daktari anaweza kutibu maambukizi ya pili."}},
+ {id:"ib",t:"v",n:{en:"Infectious bronchitis (IB)",sw:"Mkamba wa kuambukiza (IB)"},sec:true,pr:[3,5,8],
+  c:{en:"Virus (coronavirus) that spreads very fast through the air.",sw:"Virusi (coronavirus) vinavyoenea haraka sana kwa hewa."},
+  s:{en:"Coughing, sneezing, rattling breath, watery eyes. In layers: fewer eggs, with thin, soft or misshapen shells and watery whites.",sw:"Kukohoa, kupiga chafya, kupumua kwa sauti, macho kutoa maji. Kwa kuku wa mayai: mayai kupungua, maganda membamba, laini au yenye umbo baya, na ute wa majimaji."},
+  pm:{en:"Mucus in the trachea and nose, cloudy air sacs; swollen pale kidneys with white urates (kidney strains); in layers, yolk in the abdomen and an underdeveloped oviduct.",sw:"Ute kwenye koromeo na pua, mifuko ya hewa yenye ukungu; figo kuvimba na kupauka zenye chumvi nyeupe (aina zinazoshambulia figo); kwa kuku wa mayai, kiini cha yai tumboni na mrija wa mayai usiokua."},
+  sp:{en:"Air, droppings, people and equipment.",sw:"Hewa, kinyesi, watu na vifaa."},
+  pv:{en:"Vaccinate (often given together with the Newcastle vaccine). Good ventilation and biosecurity.",sw:"Chanja (mara nyingi pamoja na chanjo ya kideri). Hewa safi bandani na ulinzi wa banda."},
+  tr:{en:"No cure. Keep birds warm and reduce dust and ammonia. The vet may treat secondary E. coli or Mycoplasma infections.",sw:"Hakuna tiba. Wape joto na punguza vumbi na harufu ya amonia. Daktari anaweza kutibu maambukizi ya pili ya E. coli au Mycoplasma."}},
+ {id:"pox",t:"v",n:{en:"Fowl pox",sw:"Ndui ya kuku"},sec:true,pr:[10],
+  c:{en:"Virus (poxvirus) spread by mosquitoes and through wounds.",sw:"Virusi (poxvirus) vinavyoenezwa na mbu na kupitia vidonda."},
+  s:{en:"Dry form: wart-like scabs on the comb, wattles and around the eyes. Wet form: yellow patches in the mouth and throat, trouble breathing and eating.",sw:"Aina kavu: vipele kama chunjua kwenye kilemba, ndevu na kuzunguka macho. Aina ya majimaji: madoa ya njano mdomoni na kooni, shida ya kupumua na kula."},
+  pm:{en:"Wart-like scabs on unfeathered skin; yellow cheesy plaques stuck to the lining of the mouth, throat and trachea (wet pox).",sw:"Magamba kama chunjua kwenye ngozi isiyo na manyoya; utando wa njano kama jibini uliogandamana mdomoni, kooni na kwenye koromeo (ndui ya majimaji)."},
+  sp:{en:"Mosquitoes, pecking wounds and contact with scabs.",sw:"Mbu, vidonda vya kudonoana na kugusa magamba."},
+  pv:{en:"Vaccinate by wing-web stab as your vet advises. Control mosquitoes.",sw:"Chanja kwa kuchoma ngozi ya bawa kama daktari anavyoshauri. Dhibiti mbu."},
+  tr:{en:"No cure. Clean scabs with an antiseptic. The vet may give antibiotics to stop secondary infection.",sw:"Hakuna tiba. Safisha magamba kwa dawa ya kuua vijidudu. Daktari anaweza kutoa antibiotiki kuzuia maambukizi ya pili."}},
+ {id:"mk",t:"v",n:{en:"Marek's disease",sw:"Mareks"},pr:[],
+  c:{en:"Virus (herpesvirus) that causes tumours and nerve damage, usually from 6 weeks of age.",sw:"Virusi (herpesvirus) vinavyosababisha uvimbe na kuharibu neva, kwa kawaida kuanzia wiki 6."},
+  s:{en:"Lameness with one leg forward and one back, drooping wing, grey irregular pupils, weight loss, tumours in organs.",sw:"Kuchechemea, mguu mmoja mbele na mwingine nyuma, bawa kulegea, mboni za macho kuwa kijivu, kukonda, uvimbe kwenye viungo."},
+  pm:{en:"Grey-white tumours in the liver, spleen, heart, ovary, kidneys and skin; thick, grey, swollen nerves of the leg or wing, often on one side only.",sw:"Uvimbe mweupe-kijivu kwenye ini, bandama, moyo, kokwa la mayai, figo na ngozi; neva za mguu au bawa kunenepa na kuwa kijivu, mara nyingi upande mmoja tu."},
+  sp:{en:"Feather dust from infected birds. The virus lives a long time in the house.",sw:"Vumbi la manyoya ya kuku walioambukizwa. Virusi huishi muda mrefu bandani."},
+  pv:{en:"Buy chicks vaccinated at the hatchery on day 1. Keep chicks away from older birds.",sw:"Nunua vifaranga waliochanjwa kiwandani siku ya 1. Tenga vifaranga na kuku wakubwa."},
+  tr:{en:"No treatment. Remove and destroy affected birds.",sw:"Hakuna tiba. Ondoa na haribu kuku walioathirika."}},
+ {id:"ai",t:"v",rep:true,n:{en:"Avian influenza (bird flu)",sw:"Mafua ya ndege"},pr:[],
+  c:{en:"Influenza A virus. The highly pathogenic form kills most of the flock.",sw:"Virusi vya influenza A. Aina kali huua sehemu kubwa ya kundi."},
+  s:{en:"Many sudden deaths, swollen blue comb and wattles, swollen head, red spots under the skin of the legs, breathing problems, drop in eggs.",sw:"Vifo vingi ghafla, kilemba na ndevu kuvimba na kuwa bluu, kichwa kuvimba, madoa mekundu chini ya ngozi ya miguu, shida ya kupumua, mayai kupungua."},
+  pm:{en:"Fluid and swelling under the skin of the head and neck; bleeding in the legs, comb and many organs; bleeding on the proventriculus and heart fat; dead patches on the pancreas.",sw:"Majimaji na uvimbe chini ya ngozi ya kichwa na shingo; damu kwenye miguu, kilemba na viungo vingi; damu kwenye tumbo la mbele na mafuta ya moyo; madoa ya tishu zilizokufa kwenye kongosho."},
+  sp:{en:"Wild birds and ducks, droppings, people, vehicles and live-bird markets.",sw:"Ndege wa porini na bata, kinyesi, watu, magari na masoko ya kuku hai."},
+  pv:{en:"Strict biosecurity. Keep wild birds and ducks away from chickens.",sw:"Ulinzi mkali wa banda. Zuia ndege wa porini na bata kukaribia kuku."},
+  tr:{en:"No treatment. This disease must be reported: tell the district veterinary officer immediately and do not move or sell birds.",sw:"Hakuna tiba. Ugonjwa huu lazima uripotiwe: mjulishe afisa mifugo wa wilaya mara moja na usihamishe wala kuuza kuku."}},
+ {id:"ilt",t:"v",n:{en:"Infectious laryngotracheitis (ILT)",sw:"Laringotrakeitisi ya kuambukiza (ILT)"},sec:true,pr:[3,5,8],
+  c:{en:"Virus (gallid herpesvirus 1). Mostly affects birds older than 4 weeks.",sw:"Virusi (herpesvirus ya kuku). Huathiri zaidi kuku wenye zaidi ya wiki 4."},
+  s:{en:"Gasping with the neck stretched up, coughing up blood-stained mucus, gurgling breath, watery eyes, drop in eggs. Deaths can be high in severe outbreaks.",sw:"Kuhema kwa kunyoosha shingo juu, kukohoa makohozi yenye damu, kupumua kwa mkoromo, macho kutoa maji, mayai kupungua. Vifo vinaweza kuwa vingi katika milipuko mikali."},
+  pm:{en:"Blood clots and bloody or cheesy plugs in the larynx and trachea; inflamed, bleeding tracheal lining.",sw:"Mabonge ya damu na vizibo vya damu au kama jibini kwenye koo na koromeo; ukuta wa koromeo kuvimba na kuvuja damu."},
+  sp:{en:"Recovered birds stay carriers for life. Spreads through the air, people, equipment and litter.",sw:"Kuku waliopona hubaki wabebaji maisha yote. Huenea kwa hewa, watu, vifaa na matandiko."},
+  pv:{en:"Vaccinate only where ILT is present and as your vet advises (eye-drop vaccine). Strict biosecurity; do not mix recovered birds with new ones.",sw:"Chanja tu mahali ILT ipo na kama daktari anavyoshauri (chanjo ya tone la jicho). Ulinzi mkali wa banda; usichanganye kuku waliopona na wapya."},
+  tr:{en:"No cure. Reduce dust and keep birds calm. The vet may give antibiotics for secondary infections and may advise emergency vaccination.",sw:"Hakuna tiba. Punguza vumbi na usiwashtue kuku. Daktari anaweza kutoa antibiotiki kwa maambukizi ya pili na kushauri chanjo ya dharura."}},
+ {id:"eds",t:"v",n:{en:"Egg drop syndrome (EDS)",sw:"Mayai kupungua ghafla (EDS)"},pr:[],
+  c:{en:"Virus (duck adenovirus). Affects laying hens around peak production.",sw:"Virusi (adenovirus ya bata). Huathiri kuku wanaotaga karibu na kilele cha utagaji."},
+  s:{en:"Hens look healthy, but eggs drop suddenly. Eggs are pale, thin-shelled, soft or without shell.",sw:"Kuku huonekana wazima, lakini mayai hupungua ghafla. Mayai hupauka, maganda membamba, laini au bila ganda."},
+  pm:{en:"Few lesions: inactive ovary and oviduct, and a swollen, fluid-filled shell gland (uterus).",sw:"Dalili chache: kokwa na mrija wa mayai usiofanya kazi, na tezi ya ganda (uterasi) iliyovimba yenye majimaji."},
+  sp:{en:"Through the egg, droppings, ducks and wild birds, and dirty egg trays.",sw:"Kupitia yai, kinyesi, bata na ndege wa porini, na trei chafu za mayai."},
+  pv:{en:"Vaccinate pullets before lay (about 14–18 weeks). Keep ducks away and clean egg trays.",sw:"Chanja tetea kabla ya kutaga (karibu wiki 14–18). Zuia bata na safisha trei za mayai."},
+  tr:{en:"No treatment. Laying usually recovers in 4–10 weeks; give good feed and care.",sw:"Hakuna tiba. Utagaji kwa kawaida hurudi baada ya wiki 4–10; wape chakula na matunzo mazuri."}},
+ {id:"ae",t:"v",n:{en:"Avian encephalomyelitis (epidemic tremor)",sw:"Kutetemeka kwa vifaranga (AE)"},pr:[],
+  c:{en:"Virus (picornavirus). Affects chicks 1–3 weeks old; passed from breeders through the egg.",sw:"Virusi (picornavirus). Huathiri vifaranga wa wiki 1–3; hupitishwa na kuku wazazi kupitia yai."},
+  s:{en:"Chicks: dull, unsteady, sitting on their hocks, trembling head and neck, paralysis. Layers: a short drop in eggs only.",sw:"Vifaranga: kuzubaa, kuyumba, kukaa juu ya magoti, kichwa na shingo kutetemeka, kupooza. Kuku wa mayai: mayai kupungua kwa muda mfupi tu."},
+  pm:{en:"No obvious lesions; sometimes small whitish spots in the gizzard muscle. The laboratory is needed to confirm.",sw:"Hakuna dalili za wazi; wakati mwingine madoa madogo meupe kwenye misuli ya firigisi. Maabara inahitajika kuthibitisha."},
+  sp:{en:"Through the egg from infected breeders, and in droppings.",sw:"Kupitia yai kutoka kwa wazazi walioambukizwa, na kwenye kinyesi."},
+  pv:{en:"Vaccinate breeder and layer pullets before lay (about 10–16 weeks) so chicks are protected.",sw:"Chanja tetea wazazi na wa mayai kabla ya kutaga (karibu wiki 10–16) ili vifaranga walindwe."},
+  tr:{en:"No treatment. Remove badly affected chicks and give good care to the rest.",sw:"Hakuna tiba. Ondoa vifaranga walioathirika sana na watunze vizuri waliobaki."}},
+ {id:"cia",t:"v",n:{en:"Chicken infectious anaemia (CIA)",sw:"Upungufu wa damu wa kuambukiza (CIA)"},sec:true,pr:[8,10],
+  c:{en:"Virus (circovirus) that damages blood-forming cells and immunity in chicks aged 2–4 weeks.",sw:"Virusi (circovirus) vinavyoharibu seli zinazotengeneza damu na kinga kwa vifaranga wa wiki 2–4."},
+  s:{en:"Pale comb and skin, poor growth, bleeding under the skin and in muscles, rotting skin on the wings, more deaths.",sw:"Kilemba na ngozi kupauka, kukua vibaya, damu chini ya ngozi na kwenye misuli, ngozi ya mabawa kuoza, vifo kuongezeka."},
+  pm:{en:"Pale, yellow, fatty bone marrow in the thigh bone; small shrunken thymus; bleeding in muscles and under the skin.",sw:"Uboho wa mfupa wa paja kupauka, kuwa wa njano wenye mafuta; tezi ya thymus ndogo iliyosinyaa; damu kwenye misuli na chini ya ngozi."},
+  sp:{en:"Through the egg from breeders that are not immune, and in droppings.",sw:"Kupitia yai kutoka kwa wazazi wasio na kinga, na kwenye kinyesi."},
+  pv:{en:"Vaccinate breeders before lay so chicks receive protection from the hen.",sw:"Chanja kuku wazazi kabla ya kutaga ili vifaranga wapate kinga kutoka kwa mama."},
+  tr:{en:"No cure. Good hygiene; the vet may treat secondary bacterial infections.",sw:"Hakuna tiba. Usafi mzuri; daktari anaweza kutibu maambukizi ya pili ya bakteria."}},
+ {id:"ibh",t:"v",n:{en:"Inclusion body hepatitis (IBH)",sw:"Ugonjwa wa ini (IBH)"},pr:[],
+  c:{en:"Fowl adenovirus. Mostly broilers aged 3–7 weeks; worse after Gumboro or CIA.",sw:"Adenovirus ya kuku. Hasa kuku wa nyama wa wiki 3–7; huzidi baada ya Gumboro au CIA."},
+  s:{en:"Sudden rise in deaths, pale birds sitting hunched.",sw:"Vifo kuongezeka ghafla, kuku waliopauka wamejikunyata."},
+  pm:{en:"Swollen, pale yellow, crumbly liver with bleeding spots; pale bone marrow; sometimes fluid around the heart.",sw:"Ini limevimba, la njano iliyopauka, linabomoka, lenye madoa ya damu; uboho kupauka; wakati mwingine maji kuzunguka moyo."},
+  sp:{en:"Through the egg and in droppings; the virus survives a long time in the house.",sw:"Kupitia yai na kinyesi; virusi huishi muda mrefu bandani."},
+  pv:{en:"Vaccinate breeders where common, control Gumboro and CIA, clean and disinfect between flocks.",sw:"Chanja kuku wazazi mahali ugonjwa umeenea, dhibiti Gumboro na CIA, safisha na tia dawa banda kati ya makundi."},
+  tr:{en:"No treatment. Supportive care: vitamins, electrolytes and less stress.",sw:"Hakuna tiba. Matunzo ya kusaidia: vitamini, elektroliti na kupunguza msongo."}},
+ {id:"shs",t:"v",n:{en:"Swollen head syndrome (avian metapneumovirus)",sw:"Kichwa kuvimba (aMPV)"},sec:true,pr:[5,8,16],
+  c:{en:"Avian metapneumovirus, often followed by E. coli infection.",sw:"Virusi vya metapneumovirus ya ndege, mara nyingi hufuatwa na maambukizi ya E. coli."},
+  s:{en:"Swollen head and skin around the eyes, sneezing, foamy eyes, twisted neck, drop in eggs.",sw:"Kichwa na ngozi kuzunguka macho kuvimba, kupiga chafya, macho yenye povu, shingo kupinda, mayai kupungua."},
+  pm:{en:"Yellow jelly-like or cheesy fluid under the skin of the head and around the eyes; inflamed nasal passages.",sw:"Majimaji ya njano kama jeli au jibini chini ya ngozi ya kichwa na kuzunguka macho; njia za pua kuvimba."},
+  sp:{en:"Air, contact between birds, people and equipment.",sw:"Hewa, kugusana kwa kuku, watu na vifaa."},
+  pv:{en:"Vaccinate where present, good ventilation, low ammonia.",sw:"Chanja mahali ugonjwa upo, hewa safi, amonia kidogo."},
+  tr:{en:"No cure for the virus. The vet may treat the secondary E. coli infection.",sw:"Hakuna tiba ya virusi. Daktari anaweza kutibu maambukizi ya pili ya E. coli."}},
+ {id:"cox",t:"p",n:{en:"Coccidiosis",sw:"Kuhara damu (koksidiosisi)"},pr:[1],
+  c:{en:"Eimeria parasites in the gut. Most common in young birds on wet litter.",sw:"Vimelea vya Eimeria tumboni. Hutokea zaidi kwa kuku wachanga kwenye matandiko yenye unyevu."},
+  s:{en:"Bloody or brown watery droppings, ruffled feathers, birds huddling, poor growth, deaths.",sw:"Kinyesi chenye damu au cha kahawia chenye maji, manyoya kusimama, kuku kujikusanya, kukua vibaya, vifo."},
+  pm:{en:"Depends on the species: blood in the caeca with thick walls (E. tenella); ballooned, bleeding mid-gut (E. necatrix); white ladder-like streaks in the upper intestine (E. acervulina).",sw:"Hutegemea aina: damu kwenye utumbo mpana wenye kuta nene (E. tenella); utumbo wa kati uliovimba wenye damu (E. necatrix); mistari meupe kama ngazi kwenye utumbo wa juu (E. acervulina)."},
+  sp:{en:"Birds eat parasite eggs (oocysts) from droppings in wet litter.",sw:"Kuku hula mayai ya vimelea kutoka kwenye kinyesi kwenye matandiko yenye unyevu."},
+  pv:{en:"Keep litter dry, fix leaking drinkers, avoid overcrowding. Use an anticoccidial in feed or a coccidiosis vaccine.",sw:"Weka matandiko makavu, rekebisha vinywesheo vinavyovuja, epuka msongamano. Tumia dawa ya koksidiosisi kwenye chakula au chanjo."},
+  tr:{en:"Treat the whole flock in drinking water with an anticoccidial (toltrazuril, amprolium or a sulfa drug).",sw:"Tibu kundi lote kwenye maji ya kunywa kwa dawa ya koksidiosisi (toltrazuril, amprolium au dawa ya sulfa)."}},
+ {id:"crd",t:"b",n:{en:"Chronic respiratory disease (CRD)",sw:"Ugonjwa sugu wa kupumua (CRD)"},pr:[3,9,5,8,7],
+  c:{en:"Mycoplasma gallisepticum bacteria, often together with E. coli. Worse with stress, dust and ammonia.",sw:"Bakteria wa Mycoplasma gallisepticum, mara nyingi pamoja na E. coli. Huzidi kwa msongo, vumbi na amonia."},
+  s:{en:"Sneezing, coughing, rattling breath, nasal discharge, foamy eyes, swollen face, poor growth, fewer eggs.",sw:"Kupiga chafya, kukohoa, kupumua kwa sauti, kamasi, macho yenye povu, uso kuvimba, kukua vibaya, mayai kupungua."},
+  pm:{en:"Cloudy, thickened air sacs with yellow cheesy material; mucus in the nose and trachea. With E. coli: cheesy layers on the heart and liver.",sw:"Mifuko ya hewa yenye ukungu na minene yenye vitu vya njano kama jibini; ute kwenye pua na koromeo. Ikiwa na E. coli: utando kama jibini kwenye moyo na ini."},
+  sp:{en:"Through the egg from infected breeders, through the air, and from carrier birds.",sw:"Kupitia yai kutoka kwa kuku wazazi walioambukizwa, kwa hewa, na kutoka kwa kuku wabebaji."},
+  pv:{en:"Buy chicks from Mycoplasma-free breeders. Good ventilation, low ammonia, one age per house.",sw:"Nunua vifaranga kutoka kwa wazazi wasio na Mycoplasma. Hewa safi, amonia kidogo, umri mmoja kwa banda."},
+  tr:{en:"Tylosin, tilmicosin, erythromycin or doxycycline in drinking water, on vet advice.",sw:"Tylosin, tilmicosin, erythromycin au doxycycline kwenye maji ya kunywa, kwa ushauri wa daktari."}},
+ {id:"cor",t:"b",n:{en:"Infectious coryza",sw:"Mafua ya kuku (coryza)"},pr:[5,9,8],
+  c:{en:"Avibacterium paragallinarum bacteria.",sw:"Bakteria wa Avibacterium paragallinarum."},
+  s:{en:"Swollen face and wattles, sticky bad-smelling nasal discharge, eyes closed with pus, sneezing, drop in eggs.",sw:"Uso na ndevu kuvimba, kamasi nzito zenye harufu mbaya, macho kufumba kwa usaha, kupiga chafya, mayai kupungua."},
+  pm:{en:"Sticky or cheesy material in the nasal sinuses, swelling under the skin of the face and wattles, inflamed eyelids.",sw:"Ute mzito au kama jibini kwenye mianya ya pua, uvimbe chini ya ngozi ya uso na ndevu, kope kuvimba."},
+  sp:{en:"Carrier birds, shared drinking water, and mixing birds of different ages.",sw:"Kuku wabebaji, maji ya kunywa ya pamoja, na kuchanganya kuku wa umri tofauti."},
+  pv:{en:"Do not mix ages, buy birds from clean sources, vaccinate where the disease is common.",sw:"Usichanganye umri, nunua kuku kutoka vyanzo safi, chanja mahali ugonjwa umeenea."},
+  tr:{en:"Antibiotics or sulfonamides in drinking water (for example doxycycline, erythromycin or sulfa-trimethoprim), on vet advice.",sw:"Antibiotiki au dawa za sulfa kwenye maji ya kunywa (mfano doxycycline, erythromycin au sulfa-trimethoprim), kwa ushauri wa daktari."}},
+ {id:"chol",t:"b",n:{en:"Fowl cholera",sw:"Kipindupindu cha kuku"},pr:[16,10],
+  c:{en:"Pasteurella multocida bacteria. Usually affects birds older than 12 weeks.",sw:"Bakteria wa Pasteurella multocida. Kwa kawaida huathiri kuku wenye zaidi ya wiki 12."},
+  s:{en:"Sudden deaths, fever, green diarrhoea, swollen wattles and joints, purple head.",sw:"Vifo vya ghafla, homa, kuharisha kijani, ndevu na viungo kuvimba, kichwa kuwa zambarau."},
+  pm:{en:"Pinpoint bleeding on heart fat and gizzard, many small white dead spots across the liver; in chronic cases, cheesy swollen wattles and joints.",sw:"Madoa madogo ya damu kwenye mafuta ya moyo na firigisi, vidoa vingi vidogo vyeupe kwenye ini lote; kwa ugonjwa sugu, ndevu na viungo kuvimba vyenye kitu kama jibini."},
+  sp:{en:"Carrier birds, rats, wild birds and dirty water.",sw:"Kuku wabebaji, panya, ndege wa porini na maji machafu."},
+  pv:{en:"Control rats, give clean water, remove sick birds, vaccinate in problem areas.",sw:"Dhibiti panya, wape maji safi, ondoa kuku wagonjwa, chanja maeneo yenye tatizo."},
+  tr:{en:"Florfenicol, oxytetracycline or sulfonamides in drinking water, on vet advice.",sw:"Florfenicol, oxytetracycline au dawa za sulfa kwenye maji ya kunywa, kwa ushauri wa daktari."}},
+ {id:"sal",t:"b",n:{en:"Fowl typhoid & pullorum (Salmonella)",sw:"Homa ya matumbo ya kuku (Salmonella)"},pr:[16],
+  c:{en:"Salmonella Gallinarum (fowl typhoid) and Salmonella Pullorum (pullorum disease).",sw:"Salmonella Gallinarum (homa ya matumbo) na Salmonella Pullorum (pullorum)."},
+  s:{en:"Chicks: white pasty droppings stuck to the vent, huddling, many deaths in the first 3 weeks. Adults: yellow-green diarrhoea, pale comb, fewer eggs, deaths.",sw:"Vifaranga: kinyesi cheupe kinachoganda sehemu ya haja, kujikusanya, vifo vingi wiki 3 za kwanza. Wakubwa: kuharisha njano-kijani, kilemba kupauka, mayai kupungua, vifo."},
+  pm:{en:"Swollen, bronze-green liver with white spots and a large spleen (typhoid); in chicks, unabsorbed yolk and white nodules in the heart, lungs and gizzard; misshapen ovary follicles in hens.",sw:"Ini limevimba la rangi ya shaba-kijani lenye madoa meupe na bandama kubwa (homa ya matumbo); kwa vifaranga, kiini cha yai kisichofyonzwa na vivimbe vyeupe kwenye moyo, mapafu na firigisi; mifuko ya mayai yenye umbo baya kwa kuku."},
+  sp:{en:"Through the egg from infected breeders, droppings, feed, water and rats.",sw:"Kupitia yai kutoka kwa wazazi walioambukizwa, kinyesi, chakula, maji na panya."},
+  pv:{en:"Buy chicks from Salmonella-free breeders, control rats, clean feed and water, vaccinate where advised.",sw:"Nunua vifaranga kutoka kwa wazazi wasio na Salmonella, dhibiti panya, chakula na maji safi, chanja inaposhauriwa."},
+  tr:{en:"Antibiotics in drinking water (for example florfenicol) reduce deaths, but recovered birds can stay carriers. Ask the vet.",sw:"Antibiotiki kwenye maji ya kunywa (mfano florfenicol) hupunguza vifo, lakini kuku waliopona wanaweza kubaki wabebaji. Muulize daktari."}},
+ {id:"eco",t:"b",n:{en:"Colibacillosis (E. coli)",sw:"Kolibasilosisi (E. coli)"},pr:[5,8,10,16],
+  c:{en:"E. coli bacteria, often after stress, poor ventilation or a viral disease.",sw:"Bakteria wa E. coli, mara nyingi baada ya msongo, hewa mbaya au ugonjwa wa virusi."},
+  s:{en:"Navel infection and deaths in chicks, breathing problems, swollen joints, diarrhoea, poor growth.",sw:"Kitovu kuoza na vifo kwa vifaranga, shida ya kupumua, viungo kuvimba, kuharisha, kukua vibaya."},
+  pm:{en:"Cheesy white-yellow layers on the heart, liver and air sacs; infected yolk sac and navel in chicks.",sw:"Utando mweupe-njano kama jibini kwenye moyo, ini na mifuko ya hewa; kifuko cha kiini na kitovu vilivyoambukizwa kwa vifaranga."},
+  sp:{en:"Dirty eggs and hatchery, dusty air, droppings and dirty water.",sw:"Mayai na kiwanda cha kutotolesha vichafu, hewa yenye vumbi, kinyesi na maji machafu."},
+  pv:{en:"Clean hatching eggs, good ventilation, clean water and drinkers, control other diseases.",sw:"Mayai safi ya kutotolesha, hewa safi, maji na vinywesheo safi, dhibiti magonjwa mengine."},
+  tr:{en:"Antibiotics in drinking water after the vet confirms. A sensitivity test helps choose the right one.",sw:"Antibiotiki kwenye maji ya kunywa baada ya daktari kuthibitisha. Kipimo cha usikivu husaidia kuchagua dawa sahihi."}},
+ {id:"ne",t:"b",n:{en:"Necrotic enteritis",sw:"Kuoza kwa utumbo (necrotic enteritis)"},pr:[8],
+  c:{en:"Clostridium perfringens bacteria, often after coccidiosis or a sudden feed change.",sw:"Bakteria wa Clostridium perfringens, mara nyingi baada ya kuhara damu au kubadilisha chakula ghafla."},
+  s:{en:"Sudden deaths in well-grown birds, dark diarrhoea, depression.",sw:"Vifo vya ghafla kwa kuku walionenepa vizuri, kuharisha cheusi, kuzubaa."},
+  pm:{en:"Thick, fragile small intestine lined with a yellow-grey rough membrane (like a towel) and a bad smell.",sw:"Utumbo mdogo mnene unaochanika kwa urahisi, wenye utando wa njano-kijivu unaokwaruza (kama taulo) na harufu mbaya."},
+  sp:{en:"The bacteria live in litter and soil; disease starts when the gut is damaged.",sw:"Bakteria huishi kwenye matandiko na udongo; ugonjwa huanza utumbo unapoharibika."},
+  pv:{en:"Control coccidiosis, keep litter dry, avoid sudden feed changes.",sw:"Dhibiti kuhara damu, weka matandiko makavu, epuka kubadilisha chakula ghafla."},
+  tr:{en:"Tylosin, amoxicillin or lincomycin in drinking water, on vet advice.",sw:"Tylosin, amoxicillin au lincomycin kwenye maji ya kunywa, kwa ushauri wa daktari."}},
+ {id:"wrm",t:"p",n:{en:"Worms (roundworms & tapeworms)",sw:"Minyoo"},pr:[],
+  c:{en:"Roundworms (Ascaridia), caecal worms and tapeworms. Common in free-range birds.",sw:"Minyoo duara (Ascaridia), minyoo ya utumbo mpana na tegu. Hutokea sana kwa kuku wanaozurura."},
+  s:{en:"Poor growth, weight loss, pale comb, diarrhoea, fewer eggs. Worms may be seen in droppings.",sw:"Kukua vibaya, kukonda, kilemba kupauka, kuharisha, mayai kupungua. Minyoo inaweza kuonekana kwenye kinyesi."},
+  pm:{en:"Large roundworms in the small intestine, small worms in the caeca, tapeworms attached to the gut wall; thick gut in heavy infections.",sw:"Minyoo duara mikubwa kwenye utumbo mdogo, minyoo midogo kwenye utumbo mpana, tegu walioshikamana na ukuta wa utumbo; utumbo mnene minyoo ikiwa mingi."},
+  sp:{en:"Eating worm eggs in soil and droppings, or insects and snails that carry worms.",sw:"Kula mayai ya minyoo kwenye udongo na kinyesi, au wadudu na konokono wanaobeba minyoo."},
+  pv:{en:"Deworm regularly (for example every 2–3 months for free-range birds), rotate runs, keep houses clean.",sw:"Toa dawa ya minyoo mara kwa mara (mfano kila miezi 2–3 kwa kuku wanaozurura), badilisha maeneo ya kuzurura, safisha banda."},
+  tr:{en:"A dewormer such as piperazine or levamisole in drinking water, repeated after 7–14 days.",sw:"Dawa ya minyoo kama piperazine au levamisole kwenye maji ya kunywa, rudia baada ya siku 7–14."}},
+ {id:"mit",t:"p",n:{en:"Mites, lice & fleas",sw:"Utitiri, chawa na viroboto"},pr:[],
+  c:{en:"External parasites such as red mites, fowl mites, lice and stick-tight fleas.",sw:"Vimelea vya nje kama utitiri mwekundu, utitiri wa kuku, chawa na viroboto."},
+  s:{en:"Restless birds, feather loss, pale comb, scabby skin, fewer eggs. Red mites can be seen in cracks at night.",sw:"Kuku kutotulia, manyoya kunyonyoka, kilemba kupauka, ngozi yenye magamba, mayai kupungua. Utitiri mwekundu huonekana kwenye nyufa usiku."},
+  pm:{en:"Pale carcass from blood loss in heavy infestations; mites or lice on the skin and feathers, especially around the vent.",sw:"Mzoga uliopauka kwa kupoteza damu wadudu wakiwa wengi; utitiri au chawa kwenye ngozi na manyoya, hasa kuzunguka sehemu ya haja."},
+  sp:{en:"Wild birds, new birds, crates, nests and cracks in the house.",sw:"Ndege wa porini, kuku wapya, makreti, viota na nyufa za banda."},
+  pv:{en:"Clean and spray the house and nests, seal cracks, check new birds before mixing.",sw:"Safisha na nyunyizia banda na viota, ziba nyufa, kagua kuku wapya kabla ya kuwachanganya."},
+  tr:{en:"Spray birds and the house with a suitable acaricide and repeat after 7–10 days. Ask the vet for the right product.",sw:"Nyunyizia kuku na banda kwa dawa inayofaa ya kuua utitiri na rudia baada ya siku 7–10. Muulize daktari dawa sahihi."}},
+ {id:"asp",t:"f",n:{en:"Aspergillosis (brooder pneumonia)",sw:"Nimonia ya vifaranga (aspergillosis)"},pr:[],
+  c:{en:"Aspergillus mould from wet or mouldy litter and feed.",sw:"Fangasi wa Aspergillus kutoka kwenye matandiko au chakula chenye unyevu au ukungu."},
+  s:{en:"Gasping and fast breathing in young chicks, sleepiness, deaths.",sw:"Kuhema na kupumua haraka kwa vifaranga wachanga, kusinzia, vifo."},
+  pm:{en:"Yellow-green nodules and plaques in the lungs and air sacs, sometimes with grey-green mould growth.",sw:"Vivimbe na utando wa njano-kijani kwenye mapafu na mifuko ya hewa, wakati mwingine na ukungu wa kijivu-kijani."},
+  sp:{en:"Breathing in mould spores in the hatchery or brooder.",sw:"Kuvuta vijidudu vya fangasi kwenye kiwanda cha kutotolesha au chumba cha vifaranga."},
+  pv:{en:"Use dry, clean litter and fresh feed, clean the hatchery, keep good ventilation.",sw:"Tumia matandiko makavu na safi na chakula kipya, safisha kiwanda cha kutotolesha, weka hewa safi."},
+  tr:{en:"No effective flock treatment. Remove mouldy litter and feed and consult the vet.",sw:"Hakuna tiba nzuri kwa kundi. Ondoa matandiko na chakula chenye ukungu na wasiliana na daktari."}},
+ {id:"ms",t:"b",n:{en:"Infectious synovitis (Mycoplasma synoviae)",sw:"Viungo kuvimba (Mycoplasma synoviae)"},pr:[3,9,7,8],
+  c:{en:"Mycoplasma synoviae bacteria.",sw:"Bakteria wa Mycoplasma synoviae."},
+  s:{en:"Lameness, swollen hocks and footpads, pale comb, breast blisters, poor growth. In layers: eggs with a rough, thin shell tip.",sw:"Kuchechemea, magoti na nyayo kuvimba, kilemba kupauka, malengelenge kifuani, kukua vibaya. Kuku wa mayai: mayai yenye ncha ya ganda nyembamba na kuparuza."},
+  pm:{en:"Sticky yellow-grey fluid in the joints, tendon sheaths and breast-bone blister; swollen liver and spleen; sometimes cloudy air sacs.",sw:"Majimaji mazito ya njano-kijivu kwenye viungo, mifuko ya kano na lengelenge la mfupa wa kifua; ini na bandama kuvimba; wakati mwingine mifuko ya hewa yenye ukungu."},
+  sp:{en:"Through the egg from breeders, through the air, and from carrier birds.",sw:"Kupitia yai kutoka kwa kuku wazazi, kwa hewa, na kutoka kwa kuku wabebaji."},
+  pv:{en:"Buy chicks from MS-free breeders, one age per house, good biosecurity.",sw:"Nunua vifaranga kutoka kwa wazazi wasio na MS, umri mmoja kwa banda, ulinzi mzuri wa banda."},
+  tr:{en:"Tylosin, tilmicosin or doxycycline in drinking water, on vet advice.",sw:"Tylosin, tilmicosin au doxycycline kwenye maji ya kunywa, kwa ushauri wa daktari."}},
+ {id:"bh",t:"p",n:{en:"Blackhead (histomoniasis)",sw:"Kichwa cheusi (histomoniasis)"},pr:[],
+  c:{en:"Histomonas parasite, carried inside caecal worm eggs and earthworms. Turkeys suffer most; chickens are often carriers.",sw:"Kimelea cha Histomonas, kinachobebwa ndani ya mayai ya minyoo ya utumbo mpana na minyoo ya udongo. Bata mzinga huathirika zaidi; kuku mara nyingi ni wabebaji."},
+  s:{en:"Sulphur-yellow droppings, sleepiness, drooping wings, dark head in turkeys.",sw:"Kinyesi cha njano kama salfa, kusinzia, mabawa kulegea, kichwa cheusi kwa bata mzinga."},
+  pm:{en:"Thick, swollen caeca with cheesy cores; round, sunken, yellow-green target-like spots on the liver.",sw:"Utumbo mpana mnene uliovimba wenye kiini kama jibini; madoa ya duara yaliyobonyea ya njano-kijani kama shabaha kwenye ini."},
+  sp:{en:"Eating caecal worm eggs or earthworms, and keeping turkeys with chickens.",sw:"Kula mayai ya minyoo ya utumbo mpana au minyoo ya udongo, na kufuga bata mzinga pamoja na kuku."},
+  pv:{en:"Keep turkeys apart from chickens, deworm regularly, keep runs dry.",sw:"Tenga bata mzinga na kuku, toa dawa ya minyoo mara kwa mara, weka maeneo ya kuzurura makavu."},
+  tr:{en:"Few treatments are allowed in food birds; ask the vet. Deworm the flock to break the cycle.",sw:"Dawa chache zinaruhusiwa kwa ndege wa chakula; muulize daktari. Toa dawa ya minyoo kwa kundi kuvunja mzunguko."}}
+];
+{const o={v:0,b:1,p:2,f:3};DS.sort((x,y)=>o[x.t]-o[y.t]);}
+const DST={
+ en:{title:"Poultry diseases",lede:"Signs, causes, post-mortem lesions and prevention of common diseases, plus a vaccination programme for your farm.",
+  search:"Search disease or sign…",all:"All",v:"Viral",b:"Bacterial",p:"Parasitic",f:"Fungal",
+  c:"Cause",s:"Signs",pm:"Post-mortem (PM) lesions",sp:"How it spreads",pv:"Prevention",tr:"Treatment",pr:"MEDMAC products",prSec:"MEDMAC products for secondary infections (on vet advice)",
+  rep:"Must be reported",ask:"Send a photo to Dr Hussein",askMsg:d=>"Hello Dr Hussein, I think my birds may have "+d+". I will send photos.",
+  none:"No disease matches your search.",
+  foot:"This information helps you recognise diseases. Always confirm the diagnosis with a veterinarian, ideally with a post-mortem, before treating."},
+ sw:{title:"Magonjwa ya kuku",lede:"Dalili, vyanzo, dalili za ndani na kinga ya magonjwa ya kawaida, pamoja na ratiba ya chanjo kwa shamba lako.",
+  search:"Tafuta ugonjwa au dalili…",all:"Yote",v:"Virusi",b:"Bakteria",p:"Vimelea",f:"Fangasi",
+  c:"Chanzo",s:"Dalili",pm:"Dalili za ndani baada ya kupasua (PM)",sp:"Jinsi unavyoenea",pv:"Kinga",tr:"Tiba",pr:"Dawa za MEDMAC",prSec:"Dawa za MEDMAC kwa maambukizi ya pili (kwa ushauri wa daktari)",
+  rep:"Lazima iripotiwe",ask:"Tuma picha kwa Dr Hussein",askMsg:d=>"Habari Dr Hussein, nadhani kuku wangu wanaweza kuwa na "+d+". Nitatuma picha.",
+  none:"Hakuna ugonjwa unaolingana na utafutaji wako.",
+  foot:"Taarifa hizi zinakusaidia kutambua magonjwa. Daima thibitisha ugonjwa na daktari wa mifugo, ikiwezekana kwa kupasua kuku, kabla ya kutibu."}
+};
+const dsT=k=>DST[lang][k];
+let dsReady=false, dsFilter="all";
+function renderDiseases(){
+  if(!document.getElementById("tab-dis")) return;
+  document.querySelectorAll("[data-ds]").forEach(el=>{const v=dsT(el.dataset.ds);if(typeof v==="string")el.textContent=v;});
+  document.getElementById("dsSearch").placeholder=dsT("search");
+  document.getElementById("dsFilters").innerHTML=["all","v","b","p","f"].map(k=>`<button type="button" class="ds-f" data-f="${k}" aria-pressed="${k===dsFilter}">${esc(dsT(k))}</button>`).join("");
+  if(!dsReady){
+    document.getElementById("dsSearch").addEventListener("input",dsList);
+    document.getElementById("dsFilters").addEventListener("click",e=>{const b=e.target.closest(".ds-f");if(!b)return;dsFilter=b.dataset.f;
+      document.querySelectorAll(".ds-f").forEach(x=>x.setAttribute("aria-pressed",x===b));dsList();});
+    document.getElementById("dsList").addEventListener("click",e=>{const b=e.target.closest(".ds-prod");if(b){e.preventDefault();openDetail(+b.dataset.id);}});
+    dsReady=true;
+  }
+  dsList();
+}
+function dsList(){
+  const q=document.getElementById("dsSearch").value.trim().toLowerCase();
+  const open=new Set([...document.querySelectorAll("#dsList details[open]")].map(d=>d.dataset.id));
+  const items=DS.filter(d=>(dsFilter==="all"||d.t===dsFilter)&&(!q||[d.n.en,d.n.sw,d.s[lang],d.c[lang],(d.pm||{})[lang]||""].some(x=>x.toLowerCase().includes(q))));
+  document.getElementById("dsList").innerHTML=items.length?items.map(d=>{
+    const prods=d.pr.map(id=>P.find(p=>p.id===id)).filter(Boolean);
+    const sec=(k)=>`<div class="ds-sec${k==="pm"?" pm":""}"><h4>${esc(dsT(k))}</h4><p>${esc(d[k][lang])}</p></div>`;
+    return `<details class="ds-item" data-id="${d.id}"${open.has(d.id)?" open":""}><summary>
+      <span class="ds-name"><b>${esc(d.n[lang])}</b>${lang==="sw"&&d.n.en!==d.n.sw?`<span class="ds-alt">${esc(d.n.en)}</span>`:""}</span>
+      <span class="ds-tags"><span class="ds-type ds-${d.t==="f"?"fu":d.t}">${esc(dsT(d.t))}</span>${d.rep?`<span class="ds-type ds-rep">${esc(dsT("rep"))}</span>`:""}</span></summary>
+      <div class="ds-body">${sec("c")}${sec("s")}${d.pm?sec("pm"):""}${sec("sp")}${sec("pv")}${sec("tr")}
+      ${prods.length?`<div class="ds-sec"><h4>${esc(dsT(d.sec?"prSec":"pr"))}</h4><div class="ds-prods">${prods.map(p=>`<button type="button" class="ds-prod" data-id="${p.id}">${esc(p.name)}</button>`).join("")}</div></div>`:""}
+      <a class="ds-ask" href="${waTo("+255685431336",dsT("askMsg")(d.n[lang]))}">${ICON_WA}<span>${esc(dsT("ask"))}</span></a></div></details>`;
+  }).join(""):`<p class="rf-none">${esc(dsT("none"))}</p>`;
+}
+/* ===== end poultry diseases ===== */
+
+/* ===== Vaccination programme (Tanzania) ===== */
+// d = age in days (day 1 = arrival). rep = repeat every N days after d.
+const VXM={hatch:{en:"At the hatchery",sw:"Kiwandani (hatchery)"},eye:{en:"Eye drop",sw:"Tone la jicho"},water:{en:"Drinking water",sw:"Maji ya kunywa"},
+ eyew:{en:"Eye drop or drinking water",sw:"Tone la jicho au maji ya kunywa"},wing:{en:"Wing-web stab",sw:"Kuchoma ngozi ya bawa"},inj:{en:"Injection",sw:"Sindano"}};
+const VX={
+ broiler:[
+  {d:1,m:"hatch",v:{en:"Marek's (and often Newcastle + IB spray)",sw:"Mareks (na mara nyingi kideri + IB kwa kunyunyizia)"},n:{en:"Done at the hatchery. Ask your chick supplier.",sw:"Hufanyika kiwandani. Muulize msambazaji wa vifaranga."}},
+  {d:7,m:"eyew",v:{en:"Newcastle + Infectious bronchitis (live)",sw:"Kideri + Mkamba wa kuambukiza IB (hai)"}},
+  {d:10,m:"water",v:{en:"Gumboro (IBD), 1st dose",sw:"Gumboro (IBD), dozi ya 1"}},
+  {d:18,m:"water",v:{en:"Gumboro (IBD), 2nd dose",sw:"Gumboro (IBD), dozi ya 2"}},
+  {d:21,m:"water",v:{en:"Newcastle booster (LaSota)",sw:"Kideri, dozi ya kuongeza (LaSota)"}}],
+ layer:[
+  {d:1,m:"hatch",v:{en:"Marek's",sw:"Mareks"},n:{en:"Done at the hatchery. Buy only vaccinated chicks.",sw:"Hufanyika kiwandani. Nunua vifaranga waliochanjwa tu."}},
+  {d:7,m:"eyew",v:{en:"Newcastle + Infectious bronchitis (live)",sw:"Kideri + IB (hai)"}},
+  {d:10,m:"water",v:{en:"Gumboro (IBD), 1st dose",sw:"Gumboro (IBD), dozi ya 1"}},
+  {d:18,m:"water",v:{en:"Gumboro (IBD), 2nd dose",sw:"Gumboro (IBD), dozi ya 2"}},
+  {d:21,m:"water",v:{en:"Newcastle booster (LaSota)",sw:"Kideri, dozi ya kuongeza (LaSota)"}},
+  {d:42,m:"wing",v:{en:"Fowl pox",sw:"Ndui ya kuku"}},
+  {d:56,m:"inj",v:{en:"Fowl typhoid",sw:"Homa ya matumbo ya kuku (fowl typhoid)"},n:{en:"Booster before lay if your vet advises.",sw:"Dozi ya kuongeza kabla ya kutaga daktari akishauri."}},
+  {d:70,m:"water",v:{en:"Newcastle + IB booster (live)",sw:"Kideri + IB, dozi ya kuongeza (hai)"}},
+  {d:84,m:"inj",v:{en:"Infectious coryza (inactivated)",sw:"Mafua ya kuku – coryza (iliyouawa)"},opt:1,n:{en:"Optional: only where coryza is a problem; usually 2 doses, 4 weeks apart.",sw:"Si lazima: mahali coryza ni tatizo tu; kwa kawaida dozi 2, wiki 4 tofauti."}},
+  {d:112,m:"inj",v:{en:"Newcastle + IB + Egg drop syndrome (inactivated)",sw:"Kideri + IB + EDS (iliyouawa)"},n:{en:"Before lay (16–18 weeks).",sw:"Kabla ya kutaga (wiki 16–18)."}},
+  {d:140,m:"water",rep:75,v:{en:"Newcastle booster (LaSota) during lay",sw:"Kideri, dozi ya kuongeza (LaSota) wakati wa kutaga"},n:{en:"Repeat every 2–3 months.",sw:"Rudia kila miezi 2–3."}}],
+ local:[
+  {d:7,m:"eye",v:{en:"Newcastle (LaSota or I-2)",sw:"Kideri (LaSota au I-2)"}},
+  {d:14,m:"water",v:{en:"Gumboro (IBD), 1st dose",sw:"Gumboro (IBD), dozi ya 1"}},
+  {d:21,m:"eyew",v:{en:"Newcastle booster",sw:"Kideri, dozi ya kuongeza"}},
+  {d:28,m:"water",v:{en:"Gumboro (IBD), 2nd dose",sw:"Gumboro (IBD), dozi ya 2"}},
+  {d:42,m:"wing",v:{en:"Fowl pox",sw:"Ndui ya kuku"}},
+  {d:56,m:"inj",v:{en:"Fowl typhoid",sw:"Homa ya matumbo ya kuku (fowl typhoid)"}},
+  {d:112,m:"eye",rep:90,v:{en:"Newcastle I-2 for the whole flock",sw:"Kideri I-2 kwa kundi lote"},n:{en:"Repeat every 3 months for all ages, including adult birds and new chicks.",sw:"Rudia kila miezi 3 kwa umri wote, pamoja na kuku wakubwa na vifaranga wapya."}}]
+};
+const VXT={
+ en:{tabDis:"Diseases",tabVx:"Vaccination",vxTitle:"Vaccination programme",vxLede:"A common programme for Tanzanian farms. Choose your birds and enter the day the chicks arrived to get the dates.",
+  broiler:"Broiler",layer:"Layer",local:"Kienyeji",arrive:"Chick arrival date (day 1)",day:"Day {n}",week:"Week {n}",
+  every:"then every {n} months",opt:"Optional",today:"Today",next:"Next",done:"Done",
+  rulesH:"Rules for good vaccination",
+  rules:["Keep vaccines cold (2–8 °C) from the shop to the farm; use a cool box with ice.","Do not vaccinate sick birds.",
+   "Drinking-water vaccines: stop chlorine and disinfectants 2 days before and 1 day after. Withhold water for 1–2 hours so birds are thirsty, add skimmed milk powder (2 g per litre) to protect the vaccine, and give only what the birds will finish within 2 hours.",
+   "Do not give antibiotics or other medicine in the water on vaccination day.","Mix only what you will use now. Never keep leftover vaccine, and destroy empty vials safely.",
+   "Write down the date, vaccine name and batch number."],
+  vxNote:"Programmes vary with the farm's disease history and the vaccine brand. Confirm with your vet and follow the vaccine label.",
+  share:"Share programme on WhatsApp",ask:"Ask Dr Hussein about vaccination",askMsg:"Hello Dr Hussein, I need advice on a vaccination programme for my chickens.",shareH:"Vaccination programme"},
+ sw:{tabDis:"Magonjwa",tabVx:"Chanjo",vxTitle:"Ratiba ya chanjo",vxLede:"Ratiba ya kawaida kwa mashamba ya Tanzania. Chagua aina ya kuku na weka siku vifaranga walipofika upate tarehe.",
+  broiler:"Kuku wa nyama",layer:"Kuku wa mayai",local:"Kienyeji",arrive:"Tarehe vifaranga walipofika (siku ya 1)",day:"Siku ya {n}",week:"Wiki ya {n}",
+  every:"kisha kila miezi {n}",opt:"Si lazima",today:"Leo",next:"Inayofuata",done:"Imekwisha",
+  rulesH:"Kanuni za chanjo bora",
+  rules:["Hifadhi chanjo kwenye baridi (2–8 °C) kutoka dukani hadi shambani; tumia sanduku la baridi lenye barafu.","Usichanje kuku wagonjwa.",
+   "Chanjo za maji: acha klorini na dawa za kuua vijidudu siku 2 kabla na siku 1 baada. Zuia maji kwa saa 1–2 ili kuku wawe na kiu, ongeza unga wa maziwa usio na mafuta (g 2 kwa lita) kulinda chanjo, na toa kiasi kitakachokwisha ndani ya saa 2.",
+   "Usitoe antibiotiki wala dawa nyingine kwenye maji siku ya chanjo.","Changanya kiasi utakachotumia sasa tu. Usibakize chanjo, na haribu chupa tupu kwa usalama.",
+   "Andika tarehe, jina la chanjo na namba ya toleo (batch)."],
+  vxNote:"Ratiba hutofautiana kulingana na historia ya magonjwa shambani na aina ya chanjo. Thibitisha na daktari wako na fuata lebo ya chanjo.",
+  share:"Tuma ratiba kwa WhatsApp",ask:"Muulize Dr Hussein kuhusu chanjo",askMsg:"Habari Dr Hussein, ninahitaji ushauri kuhusu ratiba ya chanjo kwa kuku wangu.",shareH:"Ratiba ya chanjo"}
+};
+const vxT=k=>VXT[lang][k];
+let vxReady=false, vxType="broiler", dsView="dis";
+function vxAge(d){return d>=42&&d%7===0?vxT("week").replace("{n}",d/7):vxT("day").replace("{n}",d);}
+function vxDate(start,d){const x=new Date(start+"T00:00:00");x.setDate(x.getDate()+d-1);return x;}
+function vxFmt(x){return x.toLocaleDateString(lang==="sw"?"sw-TZ":"en-GB",{weekday:"short",day:"numeric",month:"short",year:"numeric"});}
+function renderVx(){
+  if(!document.getElementById("vxView")) return;
+  document.querySelectorAll("[data-vx]").forEach(el=>{const v=vxT(el.dataset.vx);if(typeof v==="string")el.textContent=v;});
+  document.getElementById("vxRules").innerHTML=vxT("rules").map(r=>`<li>${esc(r)}</li>`).join("");
+  document.getElementById("vxAsk").href=waTo("+255685431336",vxT("askMsg"));
+  if(!vxReady){
+    document.getElementById("dsView").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;dsView=b.dataset.v;
+      document.querySelectorAll("#dsView button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+      document.getElementById("disView").hidden=dsView!=="dis"; document.getElementById("vxView").hidden=dsView!=="vx";});
+    document.getElementById("vxType").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;vxType=b.dataset.v;
+      document.querySelectorAll("#vxType button").forEach(x=>x.setAttribute("aria-pressed",x===b));vxList();});
+    document.getElementById("vxStart").addEventListener("input",vxList);
+    vxReady=true;
+  }
+  vxList();
+}
+function vxList(){
+  const start=document.getElementById("vxStart").value, today=new Date(); today.setHours(0,0,0,0);
+  let nextFound=false; const share=[`${vxT("shareH")} — ${vxT(vxType)}`];
+  document.getElementById("vxList").innerHTML=VX[vxType].map(it=>{
+    let dateTxt="",cls="";
+    if(start){
+      let dt=vxDate(start,it.d);
+      if(it.rep){ while(dt<today){dt=new Date(dt.getTime()+it.rep*864e5);} }
+      dateTxt=vxFmt(dt);
+      if(dt<today) cls="past"; else if(!nextFound){cls=+dt===+today?"today":"next";nextFound=true;}
+    }
+    const age=vxAge(it.d)+(it.rep?" · "+vxT("every").replace("{n}",Math.round(it.rep/30)):"");
+    share.push(`${vxAge(it.d)}${dateTxt?" ("+dateTxt+")":""}: ${it.v[lang]} — ${VXM[it.m][lang]}`);
+    const badge=cls==="past"?vxT("done"):cls==="today"?vxT("today"):cls==="next"?vxT("next"):"";
+    return `<li class="vx-it ${cls}"><div class="vx-age">${esc(age)}</div><div class="vx-main"><b>${esc(it.v[lang])}${it.opt?` <span class="vx-opt">${esc(vxT("opt"))}</span>`:""}</b>
+      <span class="vx-m">${esc(VXM[it.m][lang])}</span>${it.n?`<span class="vx-n">${esc(it.n[lang])}</span>`:""}
+      ${dateTxt?`<span class="vx-date">${esc(dateTxt)}${badge?` <em>${esc(badge)}</em>`:""}</span>`:""}</div></li>`;
+  }).join("");
+  document.getElementById("vxShare").href="https://wa.me/?text="+encodeURIComponent(share.join("\n"));
+}
+/* ===== end vaccination ===== */
+
+/* ===== Vet-only lock for Poultry diseases ===== */
+// Password is not stored in the app, only its SHA-256 fingerprint. Change it by replacing DIS_HASH.
+const DIS_HASH="55044164e43e4cd068e8d91b4a6482b880b28424826a0bce084a69c882ea8ef6";
+const LKT={
+ en:{lockH:"For veterinarians only",lockP:"This section is for veterinarians. Ask CENOVA for the password to unlock it on your phone.",pwLbl:"Password",unlock:"Unlock",
+  wrong:"Wrong password. Please try again.",req:"Request the password on WhatsApp",relock:"Lock this section on this phone",
+  reqMsg:"Hello CENOVA, I am a veterinarian and I would like the password for the Poultry diseases section of the app.\nName: \nWork place: \nVet registration no.: "},
+ sw:{lockH:"Kwa madaktari wa mifugo tu",lockP:"Sehemu hii ni kwa madaktari wa mifugo. Omba nenosiri kutoka CENOVA ili kuifungua kwenye simu yako.",pwLbl:"Nenosiri",unlock:"Fungua",
+  wrong:"Nenosiri si sahihi. Tafadhali jaribu tena.",req:"Omba nenosiri kwa WhatsApp",relock:"Funga sehemu hii kwenye simu hii",
+  reqMsg:"Habari CENOVA, mimi ni daktari wa mifugo na ningependa nenosiri la sehemu ya Magonjwa ya kuku kwenye app.\nJina: \nMahali pa kazi: \nNamba ya usajili wa udaktari: "}
+};
+const lkT=k=>LKT[lang][k];
+let lkReady=false;
+function disUnlocked(){try{return localStorage.getItem("cm_dis_key")===DIS_HASH;}catch(e){return false;}}
+async function sha256(t){const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(t));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");}
+function renderLock(){
+  if(!document.getElementById("disLock")) return;
+  document.querySelectorAll("[data-lk]").forEach(el=>{const v=lkT(el.dataset.lk);if(typeof v==="string")el.textContent=v;});
+  document.getElementById("disReq").innerHTML=ICON_WA+"<span>"+esc(lkT("req"))+"</span>";
+  document.getElementById("disReq").href=waTo("+255685431336",lkT("reqMsg"));
+  if(!lkReady){
+    const go=async()=>{const pw=document.getElementById("disPw").value.trim(); if(!pw) return;
+      let h=""; try{h=await sha256(pw);}catch(e){}
+      if(h===DIS_HASH){try{localStorage.setItem("cm_dis_key",DIS_HASH);}catch(e){} document.getElementById("disPw").value=""; document.getElementById("disErr").hidden=true; lockState();}
+      else{document.getElementById("disErr").hidden=false; document.getElementById("disPw").select();}};
+    document.getElementById("disUnlock").addEventListener("click",go);
+    document.getElementById("disPw").addEventListener("keydown",e=>{if(e.key==="Enter")go();});
+    document.getElementById("disRelock").addEventListener("click",()=>{try{localStorage.removeItem("cm_dis_key");}catch(e){} lockState(); window.scrollTo(0,0);});
+    lkReady=true;
+  }
+  lockState();
+}
+function lockState(){
+  const ok=disUnlocked();
+  document.getElementById("disLock").hidden=ok; document.getElementById("disContent").hidden=!ok;
+  const ic=document.querySelector('.nav button[data-tab="dis"] .ic');
+  if(ic){let b=ic.querySelector(".nav-lock"); if(!ok&&!b){b=document.createElement("span");b.className="nav-lock";b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';ic.appendChild(b);} if(ok&&b) b.remove();}
+}
+/* ===== end lock ===== */
+
 function applyText(){
   document.documentElement.lang=lang;
   document.querySelectorAll("[data-t]").forEach(el=>{const v=t(el.dataset.t); if(typeof v==="string") el.textContent=v;});
@@ -1390,7 +1859,7 @@ function applyText(){
   $("#vetSms").href="sms:+255765894258?body="+encodeURIComponent(t("waMsg"));
   $("#tips").innerHTML=t("tips").map(x=>"<li>"+esc(x)+"</li>").join("");
   renderTeam();
-  renderChips(); renderList(); renderGuide(); if(current) renderDetail(current); renderDose(); renderRef(); renderPerf();
+  renderChips(); renderList(); renderGuide(); if(current) renderDetail(current); renderDose(); renderRef(); renderPerf(); renderDiseases(); renderVx(); renderLock();
 }
 function renderChips(){
   $("#chips").innerHTML=["all","p","c","s","g"].map(k=>{
@@ -1507,7 +1976,7 @@ function closeDetail(fromPop){
   if(!fromPop){try{history.back();}catch(e){}}
 }
 function setTab(n){
-  tab=n; ["products","guide","vet","dose","ref","perf"].forEach(k=>$("#tab-"+k).hidden=k!==n);
+  tab=n; ["products","guide","dis","vet","dose","ref","perf"].forEach(k=>$("#tab-"+k).hidden=k!==n);
   document.querySelectorAll(".nav button").forEach(b=>b.dataset.tab===n?b.setAttribute("aria-current","page"):b.removeAttribute("aria-current"));
   window.scrollTo(0,0);
 }
